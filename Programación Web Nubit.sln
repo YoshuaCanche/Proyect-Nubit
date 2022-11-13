@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programación Web Nubit", "Programación Web Nubit\Programación Web Nubit.csproj", "{C0BE92AD-9F85-4BD3-A7BC-DF75830B9876}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0BE92AD-9F85-4BD3-A7BC-DF75830B9876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BE92AD-9F85-4BD3-A7BC-DF75830B9876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BE92AD-9F85-4BD3-A7BC-DF75830B9876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BE92AD-9F85-4BD3-A7BC-DF75830B9876}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7949C35-7653-4DD5-A7B2-C6132B8E4A23}
+	EndGlobalSection
+EndGlobal
