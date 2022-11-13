@@ -1,23 +1,13 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: url(imagen.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 * {
-    
-    padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    background-color: white;
-}
-
-
-header {
-    background: #eacda3; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    align-items: center;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
 }
 
 a {
@@ -29,6 +19,25 @@ a {
     font-size: 23px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+
+
+header {
+    background: #eacda3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-items: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
 
 /* Estilos de index*/
 
@@ -37,7 +46,7 @@ a {
     display: flex;
     justify-content: space-between;
     float: right;
-    
+    padding: 25px 10px;
 }
 
 
@@ -56,6 +65,93 @@ a {
     width: 280px;
 }
 
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario {
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+/* .button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+.button:hover {
+    background: cadetblue;
+} */
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+    .link:hover {
+        color: white;
+    }
+
+@media(min-width:768px) {
+    .formulario {
+        margin: auto;
+        width: 500px;
+        margin-top: 80px;
+        border-radius: 2%;
+    }
+}
+
+#ingresar {
+    background-color: #3498DB;
+    color: white;
+    width: 470px;
+    height: 40px;
+    vertical-align: center;
+}
+
+    #ingresar:hover {
+        background-color: #2b7bb1;
+    }
+
 .footer {
     /* background: linear-gradient(#141e30, #243b55);
     padding: 5px 0px;
@@ -66,25 +162,23 @@ a {
     background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    padding: 1px 0px;
+
     font-family: 'Play', sans-serif;
     text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     bottom: 0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    align-self: flex-end;
 }
 
     .footer .row {
         width: 100%;
-        /*margin: 1% 0%;
-        padding: 0.6% 0%;*/
         color: black;
         font-size: 0.8em;
     }
 
     .footer .derechos {
         margin: 1% 0%;
-        padding: 0.6% 0%;
         font-size: 0.8em;
         color: white;
     }
@@ -100,6 +194,8 @@ a {
         }
 
     .footer .row ul {
+        margin: 0;
+        padding: 0;
         width: 100%;
     }
 
@@ -111,28 +207,5 @@ a {
     .footer .row a i {
         font-size: 2em;
         margin: 0% 1%;
-        padding: 0 10px;
+        padding: 30px 10px;
     }
-
-
-.contenedor {
-    
-    padding: 25px;
-}
-
-.img_empleado {
-    width: 800px;
-    height: auto;
-    padding-left: 200px;
-}
-
-.text {
-    padding-left: 50px;
-    padding-top: 60px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    color: #2E86C1;
-}
-
-
