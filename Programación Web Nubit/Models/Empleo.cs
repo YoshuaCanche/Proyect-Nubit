@@ -11,9 +11,7 @@ namespace Programación_Web_Nubit.Models
         [ForeignKey("categorias")]
         public int Fkcategoria { get; set; }
         public Categorias categorias { set; get; }
-
         public string Descripcion { set; get; }
-        public string Tipos_de_servicio { set; get; }
         public string Foto_servicio { set; get; }
     }
 }
