@@ -5,8 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using Programación_Web_Nubit.Context;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace Programación_Web_Nubit
@@ -25,9 +27,24 @@ namespace Programación_Web_Nubit
         {
             services.AddControllersWithViews();
         }
+        //    services.AddDbContext<ApplicationDbContextt>(options => options.UseSqlServer
+        //    (Configuration.GetConnectionString("DefaultConnection")));
+            
+        
 
+
+        //services.AddControllers();
+        //    services.AddDbContext<ApplicationDbContextt>(
+        //        options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+        //    b => b.MigrationsAssembly("ApplicationDbContextt"))
+        //        );
+        //    services.AddScoped(typeof(ApplicationDbContextt<>),typeof(<ApplicationDbContextt>));
+        //    services.AddSingleton<>();
+
+        //    //services.AddIdentityCore<Empleo>().AddEntityFrameworkStores<ApplicationDbContextt>();
+        //    //services.AddControllers();
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

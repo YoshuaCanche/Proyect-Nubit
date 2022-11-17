@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Programación_Web_Nubit.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext: DbContext
     {
         //sintaxis para heredar la cadena de conexion
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
