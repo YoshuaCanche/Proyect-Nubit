@@ -1,6 +1,7 @@
 ﻿using Programación_Web_Nubit.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Programación_Web_Nubit.Context
 {
     public class ApplicationDbContext: DbContext
@@ -10,6 +11,7 @@ namespace Programación_Web_Nubit.Context
         {
 
         }
+
 
         public DbSet<Categorias> categorias { set; get; }
         public DbSet<Datos_academicos> Datos_academicos { set; get; }

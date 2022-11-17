@@ -26,25 +26,11 @@ namespace Programación_Web_Nubit
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaulConnection")));
+
         }
-        //    services.AddDbContext<ApplicationDbContextt>(options => options.UseSqlServer
-        //    (Configuration.GetConnectionString("DefaultConnection")));
-            
-        
 
-
-        //services.AddControllers();
-        //    services.AddDbContext<ApplicationDbContextt>(
-        //        options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-        //    b => b.MigrationsAssembly("ApplicationDbContextt"))
-        //        );
-        //    services.AddScoped(typeof(ApplicationDbContextt<>),typeof(<ApplicationDbContextt>));
-        //    services.AddSingleton<>();
-
-        //    //services.AddIdentityCore<Empleo>().AddEntityFrameworkStores<ApplicationDbContextt>();
-        //    //services.AddControllers();
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
