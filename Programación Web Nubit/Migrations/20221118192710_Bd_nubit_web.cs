@@ -2,23 +2,10 @@
 
 namespace Programación_Web_Nubit.Migrations
 {
-    public partial class Nubitweb : Migration
+    public partial class Bd_nubit_web : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "categorias",
-                columns: table => new
-                {
-                    PkCategoria = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_categorias", x => x.PkCategoria);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Datos_academicos",
                 columns: table => new
@@ -83,6 +70,21 @@ namespace Programación_Web_Nubit.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Empleo",
+                columns: table => new
+                {
+                    Pk_empleo = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    categorias = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Foto_servicio = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Empleo", x => x.Pk_empleo);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -96,23 +98,22 @@ namespace Programación_Web_Nubit.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Empleo",
+                name: "Serviciosofrecidos",
                 columns: table => new
                 {
-                    Pk_empleo = table.Column<int>(type: "int", nullable: false)
+                    Pkserofre = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Fkcategoria = table.Column<int>(type: "int", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Foto_servicio = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Fk_empleo = table.Column<int>(type: "int", nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Empleo", x => x.Pk_empleo);
+                    table.PrimaryKey("PK_Serviciosofrecidos", x => x.Pkserofre);
                     table.ForeignKey(
-                        name: "FK_Empleo_categorias_Fkcategoria",
-                        column: x => x.Fkcategoria,
-                        principalTable: "categorias",
-                        principalColumn: "PkCategoria",
+                        name: "FK_Serviciosofrecidos_Empleo_Fk_empleo",
+                        column: x => x.Fk_empleo,
+                        principalTable: "Empleo",
+                        principalColumn: "Pk_empleo",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -134,26 +135,6 @@ namespace Programación_Web_Nubit.Migrations
                         column: x => x.Fk_rol,
                         principalTable: "Roles",
                         principalColumn: "Pkrol",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Serviciosofrecidos",
-                columns: table => new
-                {
-                    Pkserofre = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Fk_empleado = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Serviciosofrecidos", x => x.Pkserofre);
-                    table.ForeignKey(
-                        name: "FK_Serviciosofrecidos_Empleo_Fk_empleado",
-                        column: x => x.Fk_empleado,
-                        principalTable: "Empleo",
-                        principalColumn: "Pk_empleo",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -231,11 +212,6 @@ namespace Programación_Web_Nubit.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Empleo_Fkcategoria",
-                table: "Empleo",
-                column: "Fkcategoria");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_EmpleoXtrabajos_Fk_empleo",
                 table: "EmpleoXtrabajos",
                 column: "Fk_empleo");
@@ -251,9 +227,9 @@ namespace Programación_Web_Nubit.Migrations
                 column: "Fk_rol");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Serviciosofrecidos_Fk_empleado",
+                name: "IX_Serviciosofrecidos_Fk_empleo",
                 table: "Serviciosofrecidos",
-                column: "Fk_empleado");
+                column: "Fk_empleo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Trabajadores_FkDatosacademicos",
@@ -309,9 +285,6 @@ namespace Programación_Web_Nubit.Migrations
 
             migrationBuilder.DropTable(
                 name: "Perfil_De_Trabajos");
-
-            migrationBuilder.DropTable(
-                name: "categorias");
 
             migrationBuilder.DropTable(
                 name: "Roles");

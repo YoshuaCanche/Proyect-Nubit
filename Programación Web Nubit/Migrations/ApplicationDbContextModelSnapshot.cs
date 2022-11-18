@@ -19,21 +19,6 @@ namespace Programación_Web_Nubit.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Programación_Web_Nubit.Models.Categorias", b =>
-                {
-                    b.Property<int>("PkCategoria")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PkCategoria");
-
-                    b.ToTable("categorias");
-                });
-
             modelBuilder.Entity("Programación_Web_Nubit.Models.Datos_academicos", b =>
                 {
                     b.Property<int>("PkDatosacademicos")
@@ -137,15 +122,13 @@ namespace Programación_Web_Nubit.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Fkcategoria")
-                        .HasColumnType("int");
-
                     b.Property<string>("Foto_servicio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Pk_empleo");
+                    b.Property<string>("categorias")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("Fkcategoria");
+                    b.HasKey("Pk_empleo");
 
                     b.ToTable("Empleo");
                 });
@@ -220,12 +203,12 @@ namespace Programación_Web_Nubit.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Fk_empleado")
+                    b.Property<int>("Fk_empleo")
                         .HasColumnType("int");
 
                     b.HasKey("Pkserofre");
 
-                    b.HasIndex("Fk_empleado");
+                    b.HasIndex("Fk_empleo");
 
                     b.ToTable("Serviciosofrecidos");
                 });
@@ -267,17 +250,6 @@ namespace Programación_Web_Nubit.Migrations
                     b.ToTable("Trabajadores");
                 });
 
-            modelBuilder.Entity("Programación_Web_Nubit.Models.Empleo", b =>
-                {
-                    b.HasOne("Programación_Web_Nubit.Models.Categorias", "categorias")
-                        .WithMany()
-                        .HasForeignKey("Fkcategoria")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("categorias");
-                });
-
             modelBuilder.Entity("Programación_Web_Nubit.Models.EmpleoXtrabajo", b =>
                 {
                     b.HasOne("Programación_Web_Nubit.Models.Empleo", "empleo")
@@ -312,7 +284,7 @@ namespace Programación_Web_Nubit.Migrations
                 {
                     b.HasOne("Programación_Web_Nubit.Models.Empleo", "serviciosofrecidos")
                         .WithMany()
-                        .HasForeignKey("Fk_empleado")
+                        .HasForeignKey("Fk_empleo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

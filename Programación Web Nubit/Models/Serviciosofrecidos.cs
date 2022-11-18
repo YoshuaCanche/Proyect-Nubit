@@ -6,11 +6,12 @@ namespace Programación_Web_Nubit.Models
     {
         [Key]
         public int Pkserofre { get; set; }
-        public string Descripcion { get; set; }
+       
 
 
         [ForeignKey("serviciosofrecidos")]
-        public int Fk_empleado { set; get; }
+        public int Fk_empleo { set; get; }
         public Empleo serviciosofrecidos { set; get; }
+        public string Descripcion { get; set; }
     }
 }

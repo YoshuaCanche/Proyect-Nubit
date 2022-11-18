@@ -13,7 +13,6 @@ namespace Programación_Web_Nubit.Context
         }
 
 
-        public DbSet<Categorias> categorias { set; get; }
         public DbSet<Datos_academicos> Datos_academicos { set; get; }
         public DbSet<Datos_domicilio> Datos_Domicilios { set; get; }
         public DbSet<Datos_laborales> Datos_laborales { set; get; }
