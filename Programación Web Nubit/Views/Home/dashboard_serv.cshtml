@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f7d8e2933c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="viewport">
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <header>
+                    <a href="#">NUBIT</a>
+                </header>
+                <ul class="nav">
+                    <li onclick="pedidos()">
+                        <a href="/Home/dashboard">
+                            <i class="fa-solid fa-user-plus"></i> Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/dashboard_serv">
+                            <i class="fa-solid fa-shop"></i> Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/dashboard_solic">
+                            <i class="fa-solid fa-file"></i> Solicitudes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./solicitud.html">
+                            <i class="zmdi zmdi-comment-more"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Content -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+                </section>
+                <div id="titulo">
+                    <h1 class="t">Portafolio de servicios </h1>
+                </div>
+                <br>
+                <section id="pedidos">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-5 g-3">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Carpintero</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Detalles</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Fumigador</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Detalles</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Electricista</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Detalles</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Instalador aire acondicionado</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Detalles</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Plomero</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Detalles</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a href=""><i class="fa-regular fa-plus"></i> Agregar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <br><br><br><br><br><br><br><br><br><br><br /><br /><br />
+
+</body>
+
+</html>

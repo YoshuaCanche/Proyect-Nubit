@@ -23,12 +23,62 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult solicitudempleo()
         {
             return View();
         }
 
         public IActionResult PerfilTrabajo()
+        {
+            return View();
+        }
+
+        public IActionResult seleccion()
+        {
+            return View();
+        }
+
+        public IActionResult dashboard()
+        {
+            return View();
+        }
+
+        public IActionResult Nosotros()
+        {
+            return View();
+        }
+
+        public IActionResult D_personales()
+        {
+            return View();
+        }
+
+        public IActionResult D_domicilio()
+        {
+            return View();
+        }
+
+        public IActionResult D_escolares()
+        {
+            return View();
+        }
+
+        public IActionResult D_laborales()
+        {
+            return View();
+        }
+
+        public IActionResult Felicidades()
+        {
+            return View();
+        }
+
+        public IActionResult dashboard_serv()
+        {
+            return View();
+        }
+
+        public IActionResult dashboard_solic()
         {
             return View();
         }
