@@ -1,0 +1,43 @@
+﻿@model Programación_Web_Nubit.Models.Serviciosofrecidos
+@{
+    ViewData["Title"] = "Crear Servicio";
+}
+
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"> <strong>Nuevo Servicio</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="AddEjemplos" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="Descripcion">Descripcion</label>
+                        <input asp-for="Descripcion" class="form-control" placeholder="ingresar la descripcion" required />
+                    </div>                   
+
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear Articulo</button>
+                    </div>
+
+                </form>
+
+                <br />
+                <br />
+
+                <a class="btn-outline-dark" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-arrow-left"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
