@@ -1,8 +1,8 @@
-﻿
+﻿@model Programación_Web_Nubit.Models.Datos_laborales
+
 @{
 	ViewData["Title"] = "Datos Laborales";
 }
-
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta charset="UTF-8">
@@ -28,21 +28,22 @@
 
 <body>
 	<h4 class="form-label__titulos"><span> Datos laborales</span></h4>
-
+		
 	<main action="" class="formulario" id="formulario">
+		<form asp-action="CrearDatos_laborales"  method="post">
 		<!-- Grupo: Usuario -->
 		<div class="formulario__grupo" id="grupo__CPP">
-			<label for="CPP" class="formulario__label">Nombre de la empresa</label>
+			<label  asp-for="Nombrempresa" class="formulario__label">Nombre de la empresa</label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="CPP" id="CPP" placeholder="4491234567">
+				<input asp-for="Nombrempresa" class="formulario__input" name="CPP" id="CPP" placeholder="4491234567">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
 		</div>
 		<div class="formulario__grupo" id="grupo__Asentamiento">
-			<label for="Asentamiento" class="formulario__label">Lugar de trabajo</label>
+			<label asp-for="lugartrabajo" class="formulario__label">Lugar de trabajo</label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="Asentamiento" id="Asentamiento"
+				<input asp-for="lugartrabajo" class="formulario__input" name="Asentamiento" id="Asentamiento"
 					placeholder="SRX03122HQRNCSAT">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
@@ -52,9 +53,9 @@
 
 
 		<div class="formulario__grupo" id="grupo__Asentamiento">
-			<label for="Asentamiento" class="formulario__label">Puesto desempeñado	</label>
+			<label asp-for="puestoempeñado" class="formulario__label">Puesto desempeñado	</label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="Asentamiento" id="Asentamiento"
+				<input asp-for="puestoempeñado" class="formulario__input" name="Asentamiento" id="Asentamiento"
 					placeholder="SRX03122HQRNCSAT">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
@@ -64,9 +65,9 @@
 		
 
 		<div class="formulario__grupo" id="grupo__Asentamiento">
-			<label for="Asentamiento" class="formulario__label">Año de<BR> Tiempo de su servicio<BR>Prestado</label>
+			<label asp-for="tiempoprestado" class="formulario__label">Año de<BR> Tiempo de su servicio<BR>Prestado</label>
 			<div class="formulario__grupo-input">
-				<input type="date" class="formulario__input" name="Asentamiento" id="Asentamiento"
+				<input asp-for="tiempoprestado" class="formulario__input" name="Asentamiento" id="Asentamiento"
 					placeholder="SRX03122HQRNCSAT">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
@@ -90,11 +91,14 @@
 	
 </div>
 		<div class="formulario__grupo formulario__grupo-btn-enviar">
-			<a href="/Home/Felicidades" button type="submit" class="formulario__btn">Enviar</button></a>
+			<br />
+			<button href="/Home/Felicidades" button type="submit" class="formulario__btn">Guardar</button>
 			<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			<button class="formulario__btn" asp-controller="Datos_laboralescontroller" asp-action="crear">Siguente</button>
 		</div>
 
 
 	
+		</form>
 	</main>
 </body>

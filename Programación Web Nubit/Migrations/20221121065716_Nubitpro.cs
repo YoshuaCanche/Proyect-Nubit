@@ -2,7 +2,7 @@
 
 namespace Programación_Web_Nubit.Migrations
 {
-    public partial class Bd_nubit_web : Migration
+    public partial class Nubitpro : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

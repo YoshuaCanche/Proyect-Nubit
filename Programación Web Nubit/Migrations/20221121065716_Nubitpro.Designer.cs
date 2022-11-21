@@ -10,8 +10,8 @@ using Programación_Web_Nubit.Context;
 namespace Programación_Web_Nubit.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221121054634_Nubit2")]
-    partial class Nubit2
+    [Migration("20221121065716_Nubitpro")]
+    partial class Nubitpro
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
