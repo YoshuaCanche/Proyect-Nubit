@@ -1,5 +1,7 @@
-﻿@{
-	ViewData["Title"] = "Datos Domicilio";
+﻿@model Programación_Web_Nubit.Models.Datos_academicos
+
+@{
+	ViewData["Title"] = "Datos Escolares";
 }
 
 <head>
@@ -26,24 +28,24 @@
 </head>
 
 <body>
-	<h4 class="form-label__titulos"><span> Datos de Domicilio </span></h4>
+	<h4 class="form-label__titulos"><span> Datos Escolares </span></h4>
 
-	<main action="" class="formulario" id="formulario">
+	<main  action="" class="formulario" id="formulario">
 		<!-- Grupo: Usuario -->
-		<div class="formulario__grupo" id="grupo__CPP">
-			<label for="CPP" class="formulario__label">Codigo postal</label>
+		<form asp-action="CrearDatos_Academicos" method="post" >
+								<div class="formulario__grupo" id="grupo__CPP">
+			<label asp-for="nombrescuela" for="CPP" class="formulario__label">Ultimo grado <br /> de estudio </label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="CPP" id="CPP" placeholder="4491234567">
+				<input asp-for="nombrescuela" class="formulario__input" placeholder="4491234567">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-		</div>
-
+		</div> 
 
 		<div class="formulario__grupo" id="grupo__Asentamiento">
-			<label for="Asentamiento" class="formulario__label">Colonia </label>
+			<label asp-for="gradoegresado" for="Asentamiento" class="formulario__label">Nombre de la <BR>escuela</label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="Asentamiento" id="Asentamiento"
+				<input asp-for="gradoegresado"  class="formulario__input"
 					placeholder="SRX03122HQRNCSAT">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
@@ -51,28 +53,29 @@
 			</p>
 		</div>
 		<div class="formulario__grupo" id="grupo__Asentamiento">
-			<label for="Asentamiento" class="formulario__label">Direccion</label>
+			<label asp-for="especialidad" for="Asentamiento" class="formulario__label">Especialidad<BR>(Tècnico)</label>
 			<div class="formulario__grupo-input">
-				<input type="text" class="formulario__input" name="Asentamiento" id="Asentamiento"
+				<input asp-for="especialidad"  class="formulario__input" 
 					placeholder="SRX03122HQRNCSAT">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">La CURP tiene que ser de 16 dígitos y solo puede contener numeros, letras
 			</p>
 		</div>
-
+		
+		
 
 		<div class="formulario__mensaje" id="formulario__mensaje">
 			<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
 			</p>
 		</div>
-
+				<br /><br /><br /><br />
 		<div class="formulario__grupo formulario__grupo-btn-enviar">
-			<a href="/DatosEscolares/Crear" button type="submit" class="formulario__btn">Enviar</button></a>
+			<button href="/Home/D_laborales" button type="submit" class="formulario__btn">Guardar</button>
 			<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			<button class="formulario__btn" asp-controller="Home" asp-action="D_laborales">Siguente</button>
 		</div>
-			
-	</main>
+		</form>
 
-	<br /><br /><br /><br />
+	</main>
 </body>
