@@ -32,7 +32,7 @@
 
 	<main  action="" class="formulario" id="formulario">
 		<!-- Grupo: Usuario -->
-		<form asp-action="CrearDatos_Academicos" method="post" >
+	<form asp-action="CrearDatos_Academicos" method="post" >
 								<div class="formulario__grupo" id="grupo__CPP">
 			<label asp-for="nombrescuela" for="CPP" class="formulario__label">Ultimo grado <br /> de estudio </label>
 			<div class="formulario__grupo-input">
@@ -71,11 +71,11 @@
 		</div>
 				<br /><br /><br /><br />
 		<div class="formulario__grupo formulario__grupo-btn-enviar">
-			<button href="/Home/D_laborales" button type="submit" class="formulario__btn">Guardar</button>
+				<button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Guardar</button>
 			<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 			<button class="formulario__btn" asp-controller="Home" asp-action="D_laborales">Siguente</button>
 		</div>
-		</form>
+	</form>
 
 	</main>
 </body>

@@ -18,13 +18,14 @@
 
                     <div class="form-group">
                         <label asp-for="Descripcion">Descripcion</label>
-                        <input asp-for="Descripcion" class="form-control" placeholder="ingresar la descripcion" required />
+                        <input asp-for="Descripcion" class="form-control" placeholder="ingresar la descripcion"  />
                     </div>                   
 
                     <div class="container-fluid">
                         <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear Articulo</button>
                     </div>
 
+                    <button class="formulario__btn" asp-controller="Home" asp-action="dashboard_serv">Finalizar</button>
                 </form>
 
                 <br />
