@@ -4,13 +4,16 @@ using Programación_Web_Nubit.Context;
 using Programación_Web_Nubit.Models;
 using System.Threading.Tasks;
 
+
 namespace Programación_Web_Nubit.Controllers
 {
-	public class DatosLaboralesController : Controller
-	{
+    public class DatosDomicilioController : Controller
+    {
+
+
         private readonly ApplicationDbContext _context;
         private readonly ILogger<HomeController> _logger;
-        public DatosLaboralesController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public DatosDomicilioController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _context = context;
             _logger = logger;
@@ -22,24 +25,21 @@ namespace Programación_Web_Nubit.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearDato_laboral(Datos_laborales request)
+        public async Task<IActionResult> CrearDato_domicilio(Datos_domicilio request)
         {
             if (request != null)
             {
-                Datos_laborales datos_laborales = new Datos_laborales();
+                Datos_domicilio datos_domicilio = new Datos_domicilio();
 
-                datos_laborales.Nombrempresa = request.Nombrempresa;
-                datos_laborales.lugartrabajo = request.lugartrabajo;
-                datos_laborales.puestoempeñado = request.puestoempeñado;
-                datos_laborales.tiempoprestado = request.tiempoprestado;
-
-                _context.Datos_laborales.Add(datos_laborales);
+                datos_domicilio.cp = request.cp;
+                datos_domicilio.direccion = request.direccion;
+                datos_domicilio.referencia = request.referencia;
+                _context.Datos_Domicilios.Add(datos_domicilio);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Crear));
             }
             return View();
         }
-
 
     }
 }
