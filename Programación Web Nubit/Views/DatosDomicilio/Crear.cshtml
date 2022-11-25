@@ -29,7 +29,7 @@
 <body>
 	<h4 class="form-label__titulos"><span> Datos de Domicilio </span></h4>
 
-	<main action="" class="formulario" id="formulario">
+	<main">
 		<form asp-action="CrearDato_domicilio" method="post">
 		<!-- Grupo: Usuario -->
 		<div class="formulario__grupo" id="grupo__CPP">
@@ -70,13 +70,13 @@
 			</p>
 		</div>
 
-		<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<br />
-				<button href="/Home/D_domicilio" button type="submit" class="formulario__btn">Guardar</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-				<a href="/DatosEscolares/Crear" class="front text"> siguiente </a>
-				@*<button class="formulario__btn" asp-controller="DatosEscolares" asp-action="Crear">Siguente</button>*@
-			</div>
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <br />
+            <button type="submit" class="formulario__btn">Guardar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            <button class="formulario__btn" asp-controller="DatosEscolares" asp-action="Crear">Siguiente</button>
+            @*<button class="formulario__btn" asp-controller="DatosEscolares" asp-action="Crear">Siguente</button>*@
+        </div>
 
 			</form>
 

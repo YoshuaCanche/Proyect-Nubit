@@ -29,7 +29,7 @@
 <body>
 	<h4 class="form-label__titulos"><span> Datos laborales</span></h4>
 
-	<main action="" class="formulario" id="formulario">
+	<main >
 		<form asp-action="CrearDato_laboral" method="post">
 			<!-- Grupo: Usuario -->
 			<div class="formulario__grupo" id="grupo__CPP">
@@ -96,12 +96,12 @@
 			</div>
 
 			<div class="container-fluid">
-				<button type="submit" class="formulario__btn">Guardar</button>
+				<button type="submit" class="formulario__btn" >Guardar</button>
 			</div>
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<br />				
 				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-				<button class="formulario__btn" href="/Home/Felicidades">Siguente</button>
+				<button class="formulario__btn" asp-controller="Home" asp-action="Felicidades">Siguente</button>
 			</div>
 
 

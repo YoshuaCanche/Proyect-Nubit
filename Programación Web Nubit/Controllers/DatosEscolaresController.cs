@@ -17,7 +17,7 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
-        public IActionResult D_escolares()
+        public IActionResult Crear()
         {
             return View();
         }
@@ -40,14 +40,5 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Crear()
-        {
-            return View();
-        }
-        public IActionResult Privacy()
-        {
-            return View();
-        }
     }
 }

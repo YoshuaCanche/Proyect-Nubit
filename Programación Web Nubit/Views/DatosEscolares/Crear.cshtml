@@ -30,7 +30,7 @@
 <body>
 	<h4 class="form-label__titulos"><span> Datos Escolares </span></h4>
 
-	<main  action="" class="formulario" id="formulario">
+	<main  >
 		<!-- Grupo: Usuario -->
 	<form asp-action="CrearDatos_Academicos" method="post" >
 								<div class="formulario__grupo" id="grupo__CPP">
@@ -69,11 +69,11 @@
 			<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
 			</p>
 		</div>
-				<br /><br /><br /><br />
+				<br />
 		<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Guardar</button>
+			<button type="submit" class="formulario__btn">Guardar</button>
 			<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-			<button class="formulario__btn" asp-controller="Home" asp-action="D_laborales">Siguente</button>
+			<button class="formulario__btn" asp-controller="DatosLaborales" asp-action="Crear">Siguiente</button>
 		</div>
 	</form>
 
