@@ -12,9 +12,9 @@ body {
 
 
 header {
-    background: #eacda3; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #0080ff; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #d6ae7b, #eacda3);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     align-items: center;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -133,9 +133,9 @@ a {
     font-family: 'Play', sans-serif;
     text-align: center; */
 
-    background: #eacda3; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #0080ff; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #d6ae7b, #eacda3);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
     font-family: 'Play', sans-serif;

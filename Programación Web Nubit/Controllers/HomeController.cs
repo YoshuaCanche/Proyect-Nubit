@@ -53,26 +53,7 @@ namespace Programación_Web_Nubit.Controllers
         {
             return View();
         }
-
-        public IActionResult D_personales()
-        {
-            return View();
-        }
-
-        public IActionResult D_domicilio()
-        {
-            return View();
-        }
-
-        public IActionResult D_escolares()
-        {
-            return View();
-        }
-
-        public IActionResult D_laborales()
-        {
-            return View();
-        }
+      
 
         public IActionResult Felicidades()
         {

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "_Layout_Dashboard";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -47,7 +51,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Home/dashboard_solic">
+                        <a href="/Home/dashboard_serv">
                             <i class="fa-solid fa-shop"></i> Servicios
                         </a>
                     </li>
@@ -140,13 +144,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                           @* <div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href=""><i class="fa-regular fa-plus"></i> Agregar</a>
+                                        <a asp-controller="InsertServicio" asp-action="crearservicio"> Agregar</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                 </section>

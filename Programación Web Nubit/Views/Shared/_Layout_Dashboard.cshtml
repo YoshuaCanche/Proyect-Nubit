@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Programación_Web_Nubit</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/5269ca1ffa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <picture class="logo">
+                <a href="/Home/Index"><img src="/css/Image/logo_oficial-alta-resolucion.png" alt="logo"></a>
+            </picture>
+            <!-- Inicio de header  -->
+            <ul id="menu">
+                <li>
+                    <a href="\Home\Index">Cerrar Sesion</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header> <!-- Fin de header  -->
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
