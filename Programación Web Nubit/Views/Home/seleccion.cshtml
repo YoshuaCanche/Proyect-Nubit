@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Programación_Web_Nubit.Models.Empleo
+@{
 	ViewData["Title"] = "Seleccion";
 	Layout = "_Layout";
 }
@@ -27,76 +28,24 @@
 
 <body>
 	<div class="contenedor">
-		<form action="">
-			<div class="selectbox">
-				<div class="select" id="select">
-					<div class="contenido-select">
-						<h1 class="titulo">Selecciona tu pais</h1>
-						<p class="descripcion">Lorem ipsum dolor sit.</p>
-					</div>
-					<i class="fas fa-angle-down"></i>
+		
+		<div class="form-group">
+			<form asp-action="insertempxtraba" method="post">
+					<select asp-for="Pk_empleo" asp-items=" ViewBag.Empleo" class="select2-placeholder-multiple form-control">
+                         <option value=""> -- Selecciona --</option>
+                    </select>
+
+
+				<div class="container-fluid">
+					<a asp-controller="Home" asp-action="Felicidades" type="submit" class="btn btn-outline-success">Finalizar</a>
 				</div>
-
-				<div class="opciones" id="opciones">
-					<a href="#" class="opcion">
-						<div class="contenido-opcion">
-							<img src="img/mexico.png" alt="">
-							<div class="textos">
-								<h1 class="titulo">Mexico</h1>
-								<p class="descripcion">Lorem ipsum dolor sit.</p>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="opcion">
-						<div class="contenido-opcion">
-							<img src="img/spain.png" alt="">
-							<div class="textos">
-								<h1 class="titulo">España</h1>
-								<p class="descripcion">Consectetur adipiscing elit.</p>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="opcion">
-						<div class="contenido-opcion">
-							<img src="img/colombia.png" alt="">
-							<div class="textos">
-								<h1 class="titulo">Colombia</h1>
-								<p class="descripcion">Suspendisse eleifend venenatis.</p>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="opcion">
-						<div class="contenido-opcion">
-							<img src="img/argentina.png" alt="">
-							<div class="textos">
-								<h1 class="titulo">Argentina</h1>
-								<p class="descripcion">Sed posuere laoreet dui.</p>
-							</div>
-						</div>
-					</a>
-					<a href="#" class="opcion">
-						<div class="contenido-opcion">
-							<img src="img/chile.png" alt="">
-							<div class="textos">
-								<h1 class="titulo">Chile</h1>
-								<p class="descripcion">Dignissim hendrerit odio rhoncus.</p>
-							</div>
-						</div>
-					</a>
+				<br>
+				<br>
+				<button type="submit">enviar</button>
+		    </form>
 
 
-				</div>
-			</div>
-			<input type="hidden" name="pais" id="inputSelect" value="">
-		</form>
-
-		<button>
-			<span class="shadow"></span>
-			<span class="edge"></span>
-			<a href="/DatosPersonales/Crear" span class="front text"> siguiente </a>
-			</span>
-		</button>
-
+        </div>
 	</div>
 
 	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

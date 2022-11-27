@@ -2,7 +2,7 @@
 
 namespace Programación_Web_Nubit.Migrations
 {
-    public partial class Nubitpro : Migration
+    public partial class Bd_nubit_web : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -191,8 +191,8 @@ namespace Programación_Web_Nubit.Migrations
                 {
                     PkEmpxTra = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Fk_trabajador = table.Column<int>(type: "int", nullable: false),
-                    Fk_empleo = table.Column<int>(type: "int", nullable: false)
+                    Fk_trabajador = table.Column<int>(type: "int", nullable: true),
+                    Fk_empleo = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

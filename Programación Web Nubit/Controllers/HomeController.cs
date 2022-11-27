@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//using AspNetCore;
+using Dapper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Programación_Web_Nubit.Context;
@@ -8,6 +12,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Programación_Web_Nubit.Controllers
 {
@@ -22,6 +27,7 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESS;initial catalog=Bd_nubit_web;Integrated Security=True");
         public async Task<IActionResult> Index()
         {
             var response = await _context.Empleo.ToArrayAsync();
@@ -39,9 +45,32 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult seleccion()
         {
+            ViewBag.Empleo = _context.Empleo.Select(p => new SelectListItem()
+            {
+                Text = p.categorias,
+                Value = p.Pk_empleo.ToString()
+            });
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> insertempxtraba(Empleo s)
+        {
+            try
+            {
+                await conn.QueryAsync<EmpleoXtrabajo>("addFK_empleo", new
+                {
+                    s.Pk_empleo
+                }, commandType: CommandType.StoredProcedure);
+
+                return RedirectToAction(nameof(seleccion));
+            }catch(Exception ex)
+            {
+                throw new Exception("Surgio un Problema: " + ex.Message);
+            }
         }
 
         public IActionResult dashboard()
