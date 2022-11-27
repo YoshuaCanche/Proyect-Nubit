@@ -1,0 +1,261 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+
+header {
+    background-color: #0080ff; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #d6ae7b, #eacda3);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    align-items: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    display: inline-block;
+    font-size: 23px;
+}
+
+
+/* Estilos de index*/
+
+#menu {
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    padding: 40px 10px;
+}
+
+
+    #menu li {
+        list-style-type: none;
+    }
+
+        #menu li a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+.logo img {
+    padding: 0 10px;
+    margin: 0 20px;
+    width: 280px;
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    color: #2E4053;
+    margin-top: 10px;
+    padding: 30px 0;
+}
+
+
+.Total ul li {
+    border-radius: 8px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.titulo_servicios {
+    font-family: 'Oswald', sans-serif;
+    padding: 20px 0;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+}
+
+.Servicios {
+    border-radius: 15px;
+    text-align: center;
+    width: auto;
+    height: 495px;
+    background-color: #2f3e46;
+    margin: 40px 80px;
+    color: #100F0F;
+    border: 6px solid #2f3e46;
+}
+
+    .Servicios a {
+        padding-right: 0px;
+    }
+
+    .Servicios button {
+        font-family: 'Oswald', sans-serif;
+        color: black;
+        border-radius: 8px;
+        width: 400px;
+        height: 60px;
+        font-size: 20px;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+
+
+        .Servicios button:hover {
+            color: #7895B2;
+        }
+
+/* Estilos del boton de numero*/
+
+.cont {
+    padding-top: 70px;
+    position: absolute;
+    width: 610px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -20px
+}
+
+    .cont form {
+        width: 100%;
+        display: flex;
+        max-width: 440px;
+    }
+
+        .cont form .campo {
+            background-color: #b7b7a4;
+            width: 100%;
+            padding: 30px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px 0px 0px 8px;
+            outline: 0px;
+            margin: 0px -75px;
+        }
+
+        .cont form .btn-enviar {
+            padding: 30px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 0px 8px 8px 0px;
+            background-color: #b7b7a4;
+            color: whitesmoke;
+            cursor: pointer;
+            outline: 0px;
+        }
+
+            .cont form .btn-enviar:hover {
+                background-color: #6b705c;
+            }
+
+/* Estilos de los servicios a proporcionar*/
+
+.title_dos {
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 0px;
+    font-size: 2rem;
+}
+
+.info {
+    font-size: 19px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px 0px 20px 0px;
+    margin-left: -100px;
+}
+
+/* Estilos de las imagenes de servicios*/
+
+.contenedor_img {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 4% 2%;
+    box-sizing: border-box;
+}
+
+.box {
+    flex: 1;
+    overflow: hidden;
+    margin: 8px;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.20);
+    line-height: 0;
+    transition: all 600ms;
+}
+
+    .box > img {
+        width: 200%;
+        height: calc(100%);
+        object-fit: cover;
+        transition: all 300ms;
+    }
+
+    .box:hover {
+        flex: 50%;
+    }
+
+        .box:hover > img {
+            width: 100%;
+            height: 100%;
+        }
+
+.footer {
+    /* background: linear-gradient(#141e30, #243b55);
+    padding: 5px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center; */
+
+    background-color: #0080ff; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #d6ae7b, #eacda3);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    bottom: 0;
+    align-self: flex-end;
+}
+
+    .footer .row {
+        width: 100%;
+        color: black;
+        font-size: 0.8em;
+    }
+
+    .footer .derechos {
+        margin: 1% 0%;
+        font-size: 0.8em;
+        color: white;
+    }
+
+    .footer .row a {
+        text-decoration: none;
+        color: black;
+        transition: 0.5s;
+    }
+
+        .footer .row a:hover {
+            color: white;
+        }
+
+    .footer .row ul {
+        width: 100%;
+    }
+
+        .footer .row ul li {
+            display: inline-block;
+            margin: 0px 20px;
+        }
+
+    .footer .row a i {
+        font-size: 2em;
+        margin: 0% 1%;
+        padding: 30px 10px;
+    }

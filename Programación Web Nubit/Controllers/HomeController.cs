@@ -89,6 +89,34 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
+        public IActionResult Cliente()
+        {
+            return View();
+        }
+
+        public IActionResult Electricista()
+        {
+            return View();
+        }
+
+        public IActionResult Fumigador()
+        {
+            return View();
+        }
+
+        public IActionResult Aires()
+        {
+            return View();
+        }
+
+        public IActionResult Plomero()
+        {
+            return View();
+        }
+
+
+
+
         public async Task<IActionResult> dashboard_serv()
         {
             var response = await _context.Empleo.ToArrayAsync();
