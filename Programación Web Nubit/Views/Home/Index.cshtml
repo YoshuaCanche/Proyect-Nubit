@@ -21,8 +21,8 @@
 </head>
 
 <body>
-    <main>
-       
+   <main>
+
         <h1 class="title">Portafolio de Servicios</h1>
         <p class="contenido">
             Ningún trabajo es demasiado grande o demasiado pequeño para nuestro equipo, <br>
@@ -30,30 +30,28 @@
         </p>
 
 
-        <div class="Marco_Carta">
-
-            @foreach (var item in Model)
-            {
-                <div class="Container_cards">
+        <div class="Marco_Carta" >
 
 
-                    <div class="cards">
-                        <a href="./assets/pages/cliente.html"><img src="@Html.DisplayFor(x=> item.Foto_servicio)" alt=""></a>
-                        <h4>
-                            @Html.DisplayFor(x=> item.categorias)
-                        </h4>
-                        <p>
-                            @Html.DisplayFor(x=> item.Descripcion)
-                        </p>
-                        <a href="./assets/pages/cliente.html">Contratar</a>
-                    </div>
+                 <div class="grid">
+                @foreach (var item in Model)
+                {
 
+                            <article>
+                                <img src="@Html.DisplayFor(x=> item.Foto_servicio)" alt="Sample photo">
+                            <div class="texts">
+                                <h3>
+                                @Html.DisplayFor(x=> item.categorias)
+                                </h3>
+                                <p>
+                                @Html.DisplayFor(x=> item.Descripcion)
+                                </p>
+                                    <a href="/Home/Cliente"><button>Contratar</button></a>
+                            </div>
+                            </article>
+                }
 
-                </div>
-            }
-
-
-
+                 </div>
         </div>
 
 
