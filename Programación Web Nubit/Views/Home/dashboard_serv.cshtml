@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Programación_Web_Nubit.Models.Empleo>
+@{
     Layout = "_Layout_Dashboard";
 }
 
@@ -81,7 +82,7 @@
                         </ul>
                     </div>
                 </nav>
-                </section>
+             
                 <div id="titulo">
                     <h1 class="t">Portafolio de servicios </h1>
                 </div>
@@ -90,55 +91,19 @@
                     <div class="container">
                         <div class="row row-cols-1 row-cols-md-5 g-3">
                             <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Carpintero</h5>
+                                @foreach(var article in Model)
+                                {
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>@Html.DisplayFor(c=>article.categorias)</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Detalles</h5>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Detalles</h5>
-                                    </div>
-                                </div>
+                                }
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Fumigador</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Detalles</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Electricista</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Detalles</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Instalador aire acondicionado</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Detalles</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Plomero</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Detalles</h5>
-                                    </div>
-                                </div>
-                            </div>
+                                                                               
                             <div>
                                 <div class="card">
                                     <div class="card-header">

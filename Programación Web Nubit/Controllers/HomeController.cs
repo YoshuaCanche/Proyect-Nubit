@@ -60,14 +60,18 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
-        public IActionResult dashboard_serv()
+        public async Task<IActionResult> dashboard_serv()
         {
-            return View();
+            var response = await _context.Empleo.ToArrayAsync();
+            return View(response);
         }
 
-        public IActionResult dashboard_solic()
+
+
+        public async Task<IActionResult> dashboard_solic()
         {
-            return View();
+            var response = await _context.datos_Personales.ToArrayAsync();
+            return View(response);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

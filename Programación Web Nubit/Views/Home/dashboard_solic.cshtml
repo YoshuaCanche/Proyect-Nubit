@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Programación_Web_Nubit.Models.Datos_personales>
+@{
     Layout = "_Layout_Dashboard";
 }
 
@@ -80,7 +81,7 @@
                         </ul>
                     </div>
                 </nav>
-                </section>
+               
                 <div id="titulo">
                     <h1 class="t">Solicitudes </h1>
                 </div>
@@ -89,68 +90,23 @@
                     <div class="container">
                         <div class="row row-cols-1 row-cols-md-3 g-3">
                             <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Solicitud de: </strong> Jesus Armando
+                                @foreach(var item in Model)
+                                {
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <strong>Solicitud de: </strong> @Html.DisplayFor(x=>item.nombres) @Html.DisplayFor(y=>item.apellidos)
+                                        </div>
+                                        <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <strong>Acredita: </strong>Plomero
+                                                <br>
+                                                <strong> Detalles </strong>
+                                            </blockquote>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <strong>Acredita: </strong>Plomero
-                                            <br>
-                                            <strong> Detalles </strong>
-                                        </blockquote>
-                                    </div>
-                                </div>
+                                }
                             </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Solicitud de: </strong> Samuel David
-                                    </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <strong>Acredita: </strong>Plomero
-                                            <br>
-                                            <strong> Detalles </strong>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Solicitud de: </strong> Yoshua Canche
-                                    </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <strong>Acredita: </strong>Plomero
-                                            <br>
-                                            <strong> Detalles </strong>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong>Solicitud de: </strong> Jesus Armando
-                                    </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <strong>Acredita: </strong>Plomero
-                                            <br>
-                                            <strong> Detalles </strong>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                           @* <div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a asp-controller="InsertServicio" asp-action="crearservicio"> Agregar</a>
-                                    </div>
-                                </div>
-                            </div>*@
+                                                     
                         </div>
                     </div>
                 </section>
