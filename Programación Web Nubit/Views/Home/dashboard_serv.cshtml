@@ -29,6 +29,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/67bb5ced1b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,8 +98,9 @@
                                         <div class="card-header">
                                             <h5>@Html.DisplayFor(c=>article.categorias)</h5>
                                         </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Detalles</h5>
+                                        <div class="card-body" style="text-align:center;">
+                                            <a asp-controller="InsertServicio" asp-action="Editar"><i class="fa-solid fa-pen"></i></a>
+                                            <a asp-controller="InsertServicio" asp-action="Eliminar"><i class="fa-solid fa-trash"></i></a>
                                         </div>
                                     </div>
                                 }

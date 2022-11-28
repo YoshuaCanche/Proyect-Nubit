@@ -32,6 +32,15 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
+        public IActionResult Editar()
+        {
+            return View();
+        }
+        public IActionResult Eliminar()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Insertar( Empleo empleo)
         {
