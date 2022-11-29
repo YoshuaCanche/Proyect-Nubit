@@ -48,18 +48,12 @@
 
             <button id="btnLogin" @*href="/Home/dashboard"*@><p id="ingresar">INGRESAR</p></button>
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-
-
+            <br />
+             
         </div>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
     </main>
-
+    <div id="error"></div>
     
 </body>
 
@@ -93,7 +87,7 @@
                     }
                     else
 
-                        $("#error").html("<p>Contraseña o usuario incorrecto</p>");
+                        $("#error").html("<div class='alert alert-danger'><strong>Usuario o contraseña incorrectos.<\strong> Intentelo de nuevo.<\div>")
                 },
                 error: function(){
                     console.log('Login Fail!!!');
