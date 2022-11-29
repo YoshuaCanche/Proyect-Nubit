@@ -1,7 +1,106 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Pefil de Trabajo";
+    Layout = "_Layout";
 }
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/perfil.css" />
 
-<h1>prueba sincronizacion con git now</h1>
+    <title>Nubit</title>
+</head>
+
+<body>
+    <main>
+
+
+        <h1>Perfil de trabajo</h1>
+
+        <div class="align-content-center align-self-sm-start">
+
+
+
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="text" id="user" placeholder="Numero de trabajador">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" id="password" placeholder="Contraseña">
+
+            </div>
+            <!-- <input type="submit" value="Login" class="button"> -->
+
+            <button id="btnLogin" @*href="/Home/dashboard"*@><p id="ingresar">INGRESAR</p></button>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+
+
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </main>
+
+    
+</body>
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#btnLogin").click(function () {
+
+            var user = $("#user").val();
+            var password = $("#password").val();
+
+            $.ajax({
+                url:"/Login/LoginUser",
+                type: "POST",
+                data: {
+                    "user": user,
+                    "password": password
+                },
+                dataType:"json",
+                success: function (response) {
+                    console.log(response)
+                    if (response.success == true) {
+                      
+                        if (response.admin == true) {
+                            window.location.href = "/Home/dashboard";
+                        } else {
+                            window.location.href = "/Home/Index";
+                        }
+
+                    }
+                    else
+
+                        $("#error").html("<p>Contraseña o usuario incorrecto</p>");
+                },
+                error: function(){
+                    console.log('Login Fail!!!');
+                }
+
+            });
+
+        });
+    });
+</script>
