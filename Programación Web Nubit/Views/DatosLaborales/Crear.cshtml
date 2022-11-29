@@ -35,7 +35,7 @@
 			<div class="formulario__grupo" id="grupo__CPP">
 				<label asp-for="Nombrempresa" class="formulario__label">Nombre de la empresa</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="Nombrempresa" class="formulario__input"   placeholder="4491234567">
+					<input asp-for="Nombrempresa" class="formulario__input" placeholder="Nubit" Maxlength="100" type="text"   required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
@@ -44,8 +44,7 @@
 			<div class="formulario__grupo" id="grupo__Asentamiento">
 				<label asp-for="lugartrabajo" class="formulario__label">Lugar de trabajo</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="lugartrabajo" class="formulario__input" 
-						   placeholder="SRX03122HQRNCSAT">
+					<input asp-for="lugartrabajo" class="formulario__input" placeholder="SRX03122HQRNCSAT"  Maxlength="100" type="text" pattern="[a-z A-Z]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">
@@ -57,8 +56,7 @@
 			<div class="formulario__grupo" id="grupo__Asentamiento">
 				<label asp-for="puestoempeñado" class="formulario__label">Puesto desempeñado</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="puestoempeñado" class="formulario__input"  
-						   placeholder="SRX03122HQRNCSAT">
+					<input asp-for="puestoempeñado" class="formulario__input" placeholder="Tecnico en mantenimiento" Maxlength="100" type="text" pattern="[a-z A-Z]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">
@@ -70,8 +68,7 @@
 			<div class="formulario__grupo" id="grupo__Asentamiento">
 				<label asp-for="tiempoprestado" class="formulario__label">Año de<BR> Tiempo de su servicio<BR>Prestado</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="tiempoprestado" class="formulario__input"  
-						   placeholder="SRX03122HQRNCSAT">
+					<input asp-for="tiempoprestado" class="formulario__input" placeholder="SRX03122HQRNCSAT" Maxlength="200" type="text" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">

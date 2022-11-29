@@ -27,7 +27,7 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESS;initial catalog=Bd_nubit_web;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-K8DLS1G;initial catalog=Bd_nubit_web;Integrated Security=True");
         public async Task<IActionResult> Index()
         {
             var response = await _context.Empleo.ToArrayAsync();

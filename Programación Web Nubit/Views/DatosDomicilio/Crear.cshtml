@@ -35,7 +35,7 @@
 		<div class="formulario__grupo" id="grupo__CPP">
 			<label asp-for="cp" class="formulario__label">Codigo postal</label>
 			<div class="formulario__grupo-input">
-				<input asp-for="cp" class="formulario__input" placeholder="4491234567">
+				<input asp-for="cp" class="formulario__input" placeholder="77539" Maxlength="7" minlength="5" type="text" pattern="[+ 0-9]+" required="">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
@@ -45,8 +45,7 @@
 		<div class="formulario__grupo" id="grupo__Asentamiento">
 			<label asp-for="direccion" class="formulario__label">Direccion</label>
 			<div class="formulario__grupo-input">
-				<input asp-for="direccion" class="formulario__input"  id="Asentamiento"
-					placeholder="SRX03122HQRNCSAT">
+				<input asp-for="direccion" class="formulario__input"  id="Asentamiento" placeholder="Sm55 lt2" Maxlength="400"  type="text" required="">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">La CURP tiene que ser de 16 dígitos y solo puede contener numeros, letras
@@ -56,8 +55,7 @@
 		<div class="formulario__grupo" id="grupo__Asentamiento">
 			<label asp-for="referencia" class="formulario__label">Referencia</label>
 			<div class="formulario__grupo-input">
-				<input asp-for="referencia" class="formulario__input" id="Asentamiento"
-					placeholder="SRX03122HQRNCSAT">
+				<input asp-for="referencia" class="formulario__input" id="Asentamiento"  placeholder="Casa verde al lado" Maxlength="400"  type="text" required="">
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">La CURP tiene que ser de 16 dígitos y solo puede contener numeros, letras

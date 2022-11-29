@@ -35,7 +35,7 @@
 			<div class="formulario__grupo" id="grupo__nombre">
 				<label asp-for="nombres" class="formulario__label">Nombre(s)</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="nombres" class="formulario__input" id="nombre" placeholder="John Doe">
+					<input asp-for="nombres" class="formulario__input" id="nombre" placeholder="John Doe" Maxlength="35" type="text" pattern="[a-z A-Z]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
@@ -46,7 +46,7 @@
 			<div class="formulario__grupo" id="grupo__apelloidop">
 				<label asp-for="apellidos" class="formulario__label">Apellido(s)</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="apellidos" class="formulario__input" id="apellidop" placeholder="John Doe">
+					<input asp-for="apellidos" class="formulario__input" id="apellidop" placeholder="John Doe" Maxlength="35" type="text" pattern="[a-z A-Z]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
@@ -57,7 +57,7 @@
 			<div class="formulario__grupo" id="grupo__nombre">
 				<label asp-for="nacionalidad" class="formulario__label">Nacionalidad</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="nacionalidad" class="formulario__input" id="nombre" placeholder="Mexicana">
+					<input asp-for="nacionalidad" class="formulario__input" id="nombre" placeholder="Mexicana" Maxlength="10" type="text" pattern="[a-zA-Z]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
@@ -67,7 +67,7 @@
 			<div class="formulario__grupo" id="grupo__nombre">
 				<label asp-for="fechadenacimiento" class="formulario__label">Fecha Nacimiento </label>
 				<div class="formulario__grupo-input">
-					<input asp-for="fechadenacimiento" class="formulario__input" id="nombre" placeholder="17/11/2022">
+					<input asp-for="fechadenacimiento" class="formulario__input" id="nombre" placeholder="17/11/2022" Maxlength="20" type="text" pattern="[0-9]+/[0-9]+/[0-9]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
@@ -81,7 +81,7 @@
 			<div class="formulario__grupo" id="grupo__telefono">
 				<label asp-for="telefono" class="formulario__label">Teléfono</label>
 				<div class="formulario__grupo-input">
-					<input asp-for="telefono" class="formulario__input"  id="telefono" placeholder="4491234567">
+					<input asp-for="telefono" class="formulario__input"  id="telefono" placeholder="4491234567" Maxlength="13" minlength="10" type="text" pattern="[0-9]+" required="">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.
