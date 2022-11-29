@@ -35,6 +35,11 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
+        public IActionResult Spam()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Editar(int? id)
         {
@@ -128,8 +133,8 @@ namespace Programación_Web_Nubit.Controllers
 
                 }, commandType: CommandType.StoredProcedure);
 
-                return RedirectToAction(nameof(Editar));
-                
+                return RedirectToAction(nameof(Spam));
+
             }
             catch (Exception ex)
             {
@@ -149,7 +154,7 @@ namespace Programación_Web_Nubit.Controllers
 
                 }, commandType: CommandType.StoredProcedure);
 
-                return RedirectToAction(nameof(Eliminar));
+                return RedirectToAction(nameof(Spam));
             }
             catch (Exception ex)
             {
