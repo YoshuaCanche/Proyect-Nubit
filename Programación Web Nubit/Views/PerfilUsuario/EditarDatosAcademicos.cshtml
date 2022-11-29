@@ -1,0 +1,47 @@
+﻿@model Programación_Web_Nubit.Models.Datos_academicos
+@{
+    ViewData["Title"] = "Editar Datos Academicos";
+    Layout = "_Layout";
+}
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white">
+                    <strong>Editar Datos Academicos</strong>
+                </h1>
+            </div>
+            <div class="card-body">
+                <form asp-action="EditarDatosAcademicos" method="post">
+                    @*OBTENEMOS EL ID DEL USUARIO PERO SE LO OCULTAMOS AL USUARIO*@
+                    <input asp-for="PkDatosacademicos"/>
+             
+                    <div class="form-group">
+                        <label asp-for="nombrescuela">Nombre de escuela</label>
+                        <input asp-for="nombrescuela" class="form-control" placeholder="Ingrese el nombre de la escuela" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="gradoegresado">Grado egresado</label>
+                        <input asp-for="gradoegresado" class="form-control" placeholder="Ingrese el grado egresado" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="especialidad">Especialidad</label>
+                        <input asp-for="especialidad" class="form-control" placeholder="Ingrese la especialidad" required />
+                    </div>
+                    
+                    
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success">
+                            <i class="fa-solid fa-plus"></i> Editar
+                        </button>
+                    </div>
+                </form>
+                <br />
+                <a class="btn btn-outline-dark" asp-controller="PerfilUsuario" asp-action="Index">
+                    <i class="fa-solid fa-arrow-rotate-left"></i> Volver
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
