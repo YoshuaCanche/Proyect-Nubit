@@ -1,9 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Programación_Web_Nubit.Models.Empleo
 
 <h1>
-    Pagina editar
+    @ViewData["Title"]="Editar cliente";
 </h1>
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"> <strong>Editar Servicio</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="EditarServicio" method="post">
+                   
+                    <input type="hidden" asp-for="Pk_empleo" />
+
+                    <div class="form-group">
+                        <label asp-for="categorias">Nombre</label>
+                        <input asp-for="categorias" class="form-control" placeholder="ingresar nombre articulo" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Descripcion">Descripcion</label>
+                        <input asp-for="Descripcion" class="form-control" placeholder="Descripcion" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Foto_servicio">IMG</label>
+                        <input asp-for="Foto_servicio" class="form-control" placeholder="URL img" required />
+                    </div>
+
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Editar</button>
+                    </div>
+
+                </form>
+
+                <br />
+                <br />
+
+                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><i class="fa-solid fa-arrow-left"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

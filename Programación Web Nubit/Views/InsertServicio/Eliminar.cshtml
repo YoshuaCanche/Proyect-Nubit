@@ -1,9 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Programación_Web_Nubit.Models.Empleo
 
-<h1>
-    Pagina eliminar
-</h1>
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"> <strong>Proceso Eliminacion</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="EliminarServicio" method="post">
+                  
+                    <input type="hidden" asp-for="Pk_empleo" />
+
+
+                    <p>Al pulsar eliminar se borrara el registro permanentemente</p>
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success">Eliminar</button>
+                    </div>
+
+                </form>
+
+                <br />
+                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv">Cancelar</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

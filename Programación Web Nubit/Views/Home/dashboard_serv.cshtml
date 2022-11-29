@@ -99,8 +99,8 @@
                                             <h5>@Html.DisplayFor(c=>article.categorias)</h5>
                                         </div>
                                         <div class="card-body" style="text-align:center;">
-                                            <a asp-controller="InsertServicio" asp-action="Editar"><i class="fa-solid fa-pen"></i></a>
-                                            <a asp-controller="InsertServicio" asp-action="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                                            <a asp-controller="InsertServicio" asp-action="Editar" asp-route-id="@article.Pk_empleo"><i class="fa-solid fa-pen"></i></a>
+                                            <a asp-controller="InsertServicio" asp-action="Eliminar" asp-route-id="@article.Pk_empleo"><i class="fa-solid fa-trash"></i></a>
                                         </div>
                                     </div>
                                 }

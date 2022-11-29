@@ -7,6 +7,8 @@ using Programación_Web_Nubit.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
+using System.Data;
 
 namespace Programación_Web_Nubit.Controllers
 {
@@ -27,18 +29,42 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESS;initial catalog=Bd_nubit_web;Integrated Security=True");
         public IActionResult crearservicio()
         {
             return View();
         }
 
-        public IActionResult Editar()
+        [HttpGet]
+        public IActionResult Editar(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var servicio = _context.Empleo.Find(id);
+            if (servicio == null)
+            {
+                return NotFound();
+            }
+
+            return View(servicio);
         }
-        public IActionResult Eliminar()
+        public IActionResult Eliminar(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var Servicio = _context.Empleo.Find(id);
+            if (Servicio == null)
+            {
+                return NotFound();
+            }
+
+            return View(Servicio);
         }
 
         [HttpPost]
@@ -85,6 +111,49 @@ namespace Programación_Web_Nubit.Controllers
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditarServicio(Empleo emp)
+        {
+            try
+            {
+                await conn.QueryAsync<Empleo>("so_update_empleo", new
+                {
+                    emp.categorias,
+                    emp.Descripcion,
+                    emp.Foto_servicio,
+                    emp.Pk_empleo
+
+                }, commandType: CommandType.StoredProcedure);
+
+                return RedirectToAction(nameof(Editar));
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("surgio un Problema " + ex.Message);
+            }
+        }
+
+
+
+        public async Task<IActionResult> EliminarServicio(Empleo emp)
+        {
+            try
+            {
+                await conn.QueryAsync<Empleo>("sp_delete_empleo", new
+                {
+                    emp.Pk_empleo
+
+                }, commandType: CommandType.StoredProcedure);
+
+                return RedirectToAction(nameof(Eliminar));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("surgio un Problema " + ex.Message);
             }
         }
 
