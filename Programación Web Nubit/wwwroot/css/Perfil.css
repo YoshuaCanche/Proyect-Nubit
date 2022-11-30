@@ -38,9 +38,11 @@ header {
     border-bottom-right-radius: 50px;
 }
 
-
+#btnLogin {
+    height: 0px;
+    background-color: #3498DB;
+}
 /* Estilos de index*/
-
 #menu {
     margin-right: 100px;
     display: flex;
@@ -67,8 +69,9 @@ header {
 
 
 .contenedor {
-    width: 100%;
+    width: 500px;
     padding: 15px;
+    margin-left: 505px;
 }
 
 .formulario {
@@ -145,11 +148,13 @@ p {
     color: white;
     width: 470px;
     height: 40px;
-    vertical-align: center;
+    font-size: 23px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
 }
 
     #ingresar:hover {
-        background-color: #2b7bb1;
+        background-color: #E0144C;
     }
 
 .footer {
