@@ -1,7 +1,7 @@
 ﻿@model Programación_Web_Nubit.Models.Empleo
 @{
     ViewData["Title"] = "Recall";
-    Layout = "_Layout_Dashboard";
+    Layout = "_Layout";
 }
 
 
@@ -23,14 +23,39 @@
 
 <body>
     <main style="text-align:center;">
-        <h1 class="title">Redirigir</h1>
+        <h1 class="title" style="
 
+           font-family:Arial;
+           font-weight:bold;
+           
+        ">Para su conocimiento</h1>
+            <br />
+            <br />
+            <p style="font-family:Arial;font-size:20px;text-align:center;">
+                La información que se pedirá a continuación sera para contactarlo. Si esta de acuerdo de en continuar
+            </p>
+             <br />
         <form>
-            <input asp-for="Pk_empleo" />
-            <button type="submit" asp-action="Cliente">Cargar</button>
+            <input type="hidden" asp-for="Pk_empleo" />
+            <button type="submit" asp-action="Cliente" style="
+
+                border-style:none;
+                color:white;
+                background-color:darkcyan;
+                font-size:20px;
+                width:100px;
+                height:60px;
+                border-radius:20px;
+                cursor:pointer;
+            ">Continuar</button>
         </form>
 
-
+        <br />
+        <br />       
+        <br />
+        <br />
+        <br />
+        <br />
     </main>
     <!--Fin del main-->
     <!--Inicio de aside-->
