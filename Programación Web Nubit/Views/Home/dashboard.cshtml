@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Programación_Web_Nubit.Models.Perfil_de_trabajo>
+@{
     Layout = "_Layout_Dashboard";
 }
 
@@ -75,15 +76,15 @@
                     <h1 class="text-white"><strong>Articulos</strong></h1>
                 </div>
             </div>
-            <table id="tablita" class="table">
+          @if(Model.Count()>0)
+          {
+                <table id="tablita" class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Usuarios</th>
-                        <th scope="col">Contraseña</th>
-                        <th scope="col">Rol</th>
+                        <th scope="col">@Html.DisplayNameFor(x=>x.PkPt)</th>
+                        <th scope="col">@Html.DisplayNameFor(x=>x.Usuario)</th>                       
+                        <th scope="col">@Html.DisplayNameFor(x=>x.Contraseña)</th>
+                        <th scope="col">@Html.DisplayNameFor(x=>x.roles.Asignacion)</th>
                         <th scope="col" style="display: d-flex; justify-content: right;">
                         </th>
                         <th>
@@ -96,13 +97,13 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Jesus</td>
-                        <td>Armando</td>
-                        <td>Alucard</td>
-                        <td>1234</td>
-                        <td>Admin</td>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                        <td>@Html.DisplayFor(x=> item.PkPt)</td>
+                        <td>@Html.DisplayFor(x=> item.Usuario)</td>
+                        <td>@Html.DisplayFor(x=> item.Contraseña)</td>
+                        <td>@Html.DisplayFor(x=> item.roles.Asignacion)</td>
                         <td>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
@@ -111,25 +112,12 @@
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Samuel</td>
-                        <td>Roman</td>
-                        <td>Paradise</td>
-                        <td>5678</td>
-                        <td>SuperAdmin</td>
-                        <td>
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                     </tr>
+                    }
+                   
                 </tbody>
             </table>
+          }
         </div>
     </div>
 

@@ -89,9 +89,10 @@ namespace Programación_Web_Nubit.Controllers
             }
         }
 
-        public IActionResult dashboard()
+        public async Task<IActionResult> dashboard()
         {
-            return View();
+            var respuesta = await _context.Perfil_De_Trabajos.Include(x => x.roles).ToListAsync();
+            return View(respuesta);
         }
 
         public IActionResult Nosotros()
