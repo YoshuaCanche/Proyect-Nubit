@@ -27,7 +27,7 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOP-OH2KCBPB;initial catalog=Bd_nubit_web;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESS;initial catalog=Bd_nubit_web;Integrated Security=True");
         public async Task<IActionResult> Index()
         {
             var response = await _context.Empleo.ToArrayAsync();
@@ -208,6 +208,30 @@ namespace Programación_Web_Nubit.Controllers
         //    }
         //    return NotFound();
         //}
+
+        public IActionResult AgregarUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddUser(Perfil_de_trabajo pt)
+        {
+            if (pt != null)
+            {
+                Perfil_de_trabajo perfil = new Perfil_de_trabajo();
+                perfil.Usuario = pt.Usuario;
+                perfil.Contraseña = pt.Contraseña;
+                perfil.Fk_rol = 1;
+
+                _context.Perfil_De_Trabajos.Add(perfil);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(dashboard));
+
+            }
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

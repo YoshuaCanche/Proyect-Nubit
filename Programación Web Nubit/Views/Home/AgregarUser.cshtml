@@ -1,0 +1,49 @@
+﻿@model Programación_Web_Nubit.Models.Perfil_de_trabajo
+
+<h1>
+    @ViewData["Title"]="Agrgar cliente";
+</h1>
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"> <strong>Agregar Servicio</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="AddUser" method="post">
+
+                    <div class="form-group">
+                        <label asp-for="Usuario">Usuario</label>
+                        <input asp-for="Usuario" class="form-control" placeholder="ingresar nombre de usuario" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Contraseña">Contraseña</label>
+                        <input asp-for="Contraseña" class="form-control" placeholder="Contraseña" required />
+                    </div>
+
+
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>ADD</button>
+                    </div>
+
+                </form>
+
+                <br />
+                <br />
+
+                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><i class="fa-solid fa-arrow-left"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
