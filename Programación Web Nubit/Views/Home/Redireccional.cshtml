@@ -1,0 +1,38 @@
+﻿@model Programación_Web_Nubit.Models.Empleo
+@{
+    ViewData["Title"] = "Recall";
+    Layout = "_Layout_Dashboard";
+}
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="~/css/cliente.css" />
+
+    <title>Nubit</title>
+</head>
+
+<body>
+    <main style="text-align:center;">
+        <h1 class="title">Redirigir</h1>
+
+        <form>
+            <input asp-for="Pk_empleo" />
+            <button type="submit" asp-action="Cliente">Cargar</button>
+        </form>
+
+
+    </main>
+    <!--Fin del main-->
+    <!--Inicio de aside-->
+
+</body>

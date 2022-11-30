@@ -27,12 +27,28 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-K8DLS1G;initial catalog=Bd_nubit_web;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESSinitial catalog=Bd_nubit_web;Integrated Security=True");
         public async Task<IActionResult> Index()
         {
             var response = await _context.Empleo.ToArrayAsync();
 
             return View(response);
+        }
+
+        public IActionResult Redireccional(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var servicio = _context.Empleo.Find(id);
+            if (servicio == null)
+            {
+                return NotFound();
+            }
+
+            return View(servicio);
         }
 
         public IActionResult solicitudempleo()
@@ -89,9 +105,10 @@ namespace Programación_Web_Nubit.Controllers
             return View();
         }
 
-        public IActionResult Cliente()
+        public async Task<IActionResult> Cliente(Empleo ex)
         {
-            return View();
+            var res = await _context.Serviciosofrecidos.Where(z => z.Fk_empleo == ex.Pk_empleo).ToListAsync();
+            return View(res);
         }
 
         public IActionResult Electricista()

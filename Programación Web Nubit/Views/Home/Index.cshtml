@@ -46,7 +46,7 @@
                                 <p>
                                 @Html.DisplayFor(x=> item.Descripcion)
                                 </p>
-                                    <a href="/Home/Cliente"><button>Contratar</button></a>
+                            <a asp-action="Redireccional" asp-route-id="@item.Pk_empleo"><button>Contratar</button></a>
                             </div>
                             </article>
                 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Programación_Web_Nubit.Models.Serviciosofrecidos>
+@{
     ViewData["Title"] = "Servicios";
     Layout = "_Layout";
 }
@@ -22,7 +23,7 @@
 
 <body>
     <main>
-        <h1 class="title">Servicios de Carpinteria</h1>
+        <h1 class="title">Detalles del Servicio</h1>
         <div class="Total">
             <ul>
                 <li>
@@ -53,17 +54,17 @@
 
             </form>
             <h2 class="title_dos">Podemos Ayudarte en:</h2>
-            <li class="info">Reparacion de muebles, roperos, bases de camas.</li>
-            <li class="info">Remodelación de puertas y ventanas.</li>
-            <li class="info">Remodelación de muebles para cocinas Y recamaras.</li>
-            <li class="info">Diseño de articulos decorativos.</li>
-            <li class="info">Comedores o armarios personalizados.</li>
-            <li class="info">Bases para marcos de fotos.</li>
+            @foreach(var item in Model)
+            {
+                <li class="info">@Html.DisplayFor(v=>item.Descripcion)</li>
+            }
+            
+           
         </div>
     </main>
     <!--Fin del main-->
     <!--Inicio de aside-->
-    <aside>
+   @* <aside>
         <div class="contenedor_img">
             <div class="box">
                 <img src="../image/img_carpintero/cap1.jpg" alt="">
@@ -79,9 +80,7 @@
                 <img src="../image/img_carpintero/cap5.jpg" alt="">
             </div>
         </div>
-    </aside>
-
-
+    </aside>*@
 
 
 </body>
