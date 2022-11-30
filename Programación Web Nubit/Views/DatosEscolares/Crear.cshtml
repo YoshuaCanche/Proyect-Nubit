@@ -36,7 +36,7 @@
 								<div class="formulario__grupo" id="grupo__CPP">
 			<label asp-for="nombrescuela" for="CPP" class="formulario__label">Ultimo grado <br /> de estudio </label>
 			<div class="formulario__grupo-input">
-				<input asp-for="nombrescuela" class="formulario__input" placeholder="Politecnica" Maxlength="80" type="text" pattern="[a-z A-Z]+" required="">
+				<input asp-for="nombrescuela" class="formulario__input" placeholder="Politecnica" >
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
@@ -45,7 +45,7 @@
 		<div class="formulario__grupo" id="grupo__Asentamiento">
 			<label asp-for="gradoegresado" for="Asentamiento" class="formulario__label">Nombre de la <BR>escuela</label>
 			<div class="formulario__grupo-input">
-				<input asp-for="gradoegresado"  class="formulario__input" placeholder="cecyte 3" Maxlength="50" type="text" required="">
+				<input asp-for="gradoegresado"  class="formulario__input" placeholder="cecyte 3" >
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">La CURP tiene que ser de 16 dígitos y solo puede contener numeros, letras
@@ -54,7 +54,7 @@
 		<div class="formulario__grupo" id="grupo__Asentamiento">
 			<label asp-for="especialidad" for="Asentamiento" class="formulario__label">Especialidad<BR>(Tècnico)</label>
 			<div class="formulario__grupo-input">
-				<input asp-for="especialidad"  class="formulario__input" placeholder="TESMEC" Maxlength="80" type="text" pattern="[a-z A-Z]+" required="">
+				<input asp-for="especialidad"  class="formulario__input" placeholder="TESMEC" >
 				<i class="formulario__validacion-estado fas fa-times-circle"></i>
 			</div>
 			<p class="formulario__input-error">La CURP tiene que ser de 16 dígitos y solo puede contener numeros, letras
