@@ -81,7 +81,6 @@
                 <table id="tablita" class="table">
                 <thead>
                     <tr>
-                        <th scope="col">@Html.DisplayNameFor(x=>x.PkPt)</th>
                         <th scope="col">@Html.DisplayNameFor(x=>x.Usuario)</th>                       
                         <th scope="col">@Html.DisplayNameFor(x=>x.Contraseña)</th>
                         <th scope="col">@Html.DisplayNameFor(x=>x.roles.Asignacion)</th>
@@ -100,17 +99,16 @@
                     @foreach(var item in Model)
                     {
                         <tr>
-                        <td>@Html.DisplayFor(x=> item.PkPt)</td>
                         <td>@Html.DisplayFor(x=> item.Usuario)</td>
                         <td>@Html.DisplayFor(x=> item.Contraseña)</td>
                         <td>@Html.DisplayFor(x=> item.roles.Asignacion)</td>
                         <td>
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                           
+                               <a asp-action="EditarUser" asp-route-id="@item.PkPt"><i class="fa-solid fa-pen"></i></a>
+                           
+                           @* <button>
+                                <a asp-action="EliminarUser" asp-route-id="@item.PkPt"><i class="fa-solid fa-trash"></i></a>
+                            </button>*@
                         </td>
                      </tr>
                     }
