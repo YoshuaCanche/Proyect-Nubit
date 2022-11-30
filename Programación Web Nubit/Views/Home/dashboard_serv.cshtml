@@ -44,32 +44,27 @@
         <div id="viewport">
             <!-- Sidebar -->
             <div id="sidebar">
-                <header>
-                    <a href="#">NUBIT</a>
-                </header>
-                <ul class="nav">
-                    <li onclick="pedidos()">
-                        <a href="/Home/dashboard">
-                            <i class="fa-solid fa-user-plus"></i> Usuarios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Home/dashboard_serv">
-                            <i class="fa-solid fa-shop"></i> Servicios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Home/dashboard_solic">
-                            <i class="fa-solid fa-file"></i> Solicitudes
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./solicitud.html">
-                            <i class="zmdi zmdi-comment-more"></i> Contacto
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <header>
+            <a href="#">DASHBOARD</a>
+        </header>
+        <ul class="nav">
+            <li onclick="pedidos()">
+                <a href="/Home/dashboard">
+                    <i class="fa-solid fa-users"></i> Usuarios
+                </a>
+            </li>
+            <li>
+                <a href="/Home/dashboard_serv">
+                    <i class="fa-solid fa-shop"></i> Servicios
+                </a>
+            </li>
+            <li>
+                <a href="/Home/dashboard_solic">
+                    <i class="fa-solid fa-file"></i> Solicitudes
+                </a>
+            </li>
+        </ul>
+    </div>
             <!-- Content -->
             <div id="content">
                 <nav class="navbar navbar-default">
@@ -90,8 +85,8 @@
                 <br>
                 <section id="pedidos">
                     <div class="container">
-                        <div class="row row-cols-1 row-cols-md-5 g-3">
-                            <div class="col">
+                        <div class="row row-col-3">
+                            <div class="grid">
                                 @foreach(var article in Model)
                                 {
                                     <div class="card">
@@ -106,7 +101,7 @@
                                 }
                             </div>
                                                                                
-                            <div>
+                            <div id="agregar" class="col-3">
                                 <div class="card">
                                     <div class="card-header">
                                         <a asp-controller="InsertServicio" asp-action="crearservicio"><i class="fa-regular fa-plus"></i> Agregar</a>
@@ -115,7 +110,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </>
             </div>
         </div>
     </main>
