@@ -1,0 +1,39 @@
+﻿@model Programación_Web_Nubit.Models.Perfil_de_trabajo
+
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"> <strong>Proceso Eliminacion</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+                <form asp-action="DeleteUser" method="post">
+                    @*id del articulo oculto*@
+                    <input type="hidden" asp-for="PkPt" />
+
+
+
+                    <p>Al pulsar eliminar se borrara el registro permanentemente</p>
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-outline-success">Eliminar</button>
+                    </div>
+
+
+
+                </form>
+
+                <br />
+                <a class="btn-outline-dark" asp-action="dashboard">Cancelar</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

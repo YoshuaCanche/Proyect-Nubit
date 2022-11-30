@@ -112,28 +112,7 @@ namespace Programación_Web_Nubit.Controllers
             return View(res);
         }
 
-        public IActionResult Electricista()
-        {
-            return View();
-        }
-
-        public IActionResult Fumigador()
-        {
-            return View();
-        }
-
-        public IActionResult Aires()
-        {
-            return View();
-        }
-
-        public IActionResult Plomero()
-        {
-            return View();
-        }
-
-
-
+       
 
         public async Task<IActionResult> dashboard_serv()
         {
@@ -149,10 +128,93 @@ namespace Programación_Web_Nubit.Controllers
             return View(response);
         }
 
+        [HttpGet]
+        public IActionResult EditarUser(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var perfil = _context.Perfil_De_Trabajos.Find(id);
+            if (perfil == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Roles = _context.Roles.Select(p => new SelectListItem()
+            {
+                Text = p.Asignacion,
+                Value = p.Pkrol.ToString()
+            });
+
+            return View(perfil);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser( Perfil_de_trabajo pt)
+        {
+            Perfil_de_trabajo perfil = new Perfil_de_trabajo();
+
+            perfil = _context.Perfil_De_Trabajos.Find(pt.PkPt);
+
+            if (perfil != null)
+            {
+                perfil.Usuario = pt.Usuario;
+                perfil.Contraseña = pt.Contraseña;
+                perfil.Fk_rol = pt.Fk_rol;
+
+                _context.Entry(perfil).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(dashboard));
+
+            }
+            return NotFound();
+        }
+
+
+        //public IActionResult EliminarUser(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var perfil = _context.Perfil_De_Trabajos.Find(id);
+        //    if (perfil == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(perfil);
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> DeleteUser(Perfil_de_trabajo pt)
+        //{
+        //    Perfil_de_trabajo perfil = new Perfil_de_trabajo();
+
+        //    perfil = _context.Perfil_De_Trabajos.Find(pt.PkPt);
+
+        //    if (perfil != null)
+        //    {            
+        //        perfil.PkPt = pt.PkPt;
+
+        //        _context.Entry(perfil).State = EntityState.Deleted;
+        //        await _context.SaveChangesAsync();
+
+        //        return RedirectToAction(nameof(dashboard));
+
+        //    }
+        //    return NotFound();
+        //}
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }
