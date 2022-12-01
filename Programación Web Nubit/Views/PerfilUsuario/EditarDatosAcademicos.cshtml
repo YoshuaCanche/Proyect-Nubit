@@ -3,7 +3,7 @@
     ViewData["Title"] = "Editar Datos Academicos";
     Layout = "_Layout";
 }
-
+<link rel="stylesheet" href="~/css/PerfilUsuario.css"/>
 <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
@@ -15,29 +15,32 @@
             <div class="card-body">
                 <form asp-action="EditarDatosAcademicos" method="post">
                     @*OBTENEMOS EL ID DEL USUARIO PERO SE LO OCULTAMOS AL USUARIO*@
-                    <input asp-for="PkDatosacademicos"/>
+                    <input type="hidden" asp-for="PkDatosacademicos"/>
              
                     <div class="form-group">
-                        <label asp-for="nombrescuela">Nombre de escuela</label>
-                        <input asp-for="nombrescuela" class="form-control" placeholder="Ingrese el nombre de la escuela" required />
+                        <label class="formulario__label" asp-for="nombrescuela">Nombre de escuela : </label>
+                        <input class="formulario__input" asp-for="nombrescuela" placeholder="Ingrese el nombre de la escuela" required />
                     </div>
                     <div class="form-group">
-                        <label asp-for="gradoegresado">Grado egresado</label>
-                        <input asp-for="gradoegresado" class="form-control" placeholder="Ingrese el grado egresado" required />
+                        <label class="formulario__label" asp-for="gradoegresado">Grado egresado : </label>
+                        <input class="formulario__input" asp-for="gradoegresado" placeholder="Ingrese el grado egresado" required />
                     </div>
                     <div class="form-group">
-                        <label asp-for="especialidad">Especialidad</label>
-                        <input asp-for="especialidad" class="form-control" placeholder="Ingrese la especialidad" required />
+                        <label class="formulario__label" asp-for="especialidad">Especialidad : </label>
+                        <input class="formulario__input" asp-for="especialidad" placeholder="Ingrese la especialidad" required />
                     </div>
                     
                     
                     <div class="container-fluid">
+                        <br />
+                        <br />
                         <button type="submit" class="btn btn-outline-success">
                             <i class="fa-solid fa-plus"></i> Editar
                         </button>
                     </div>
                 </form>
-                <br />
+                 <br />
+                 <br />
                 <a class="btn btn-outline-dark" asp-controller="PerfilUsuario" asp-action="Index">
                     <i class="fa-solid fa-arrow-rotate-left"></i> Volver
                 </a>

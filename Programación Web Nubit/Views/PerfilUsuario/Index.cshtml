@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Programación_Web_Nubit.Models.Trabajadores>
-
+@using Microsoft.AspNetCore.Http;
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -12,44 +12,38 @@
       <div id="tab4" class="tab"> 
       <a href="#tab4">Datos Laborales</a>
       <div class="tab-content">
-          @if (Model.Count() > 0)
+           @if (Model.Count() > 0)
                 {
+
+
                     @foreach (var Item in Model)
-                    {
+                    { 
+                    if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt") ) {
+
                         <div>
-                            <label>Nombre de empresa</label>
+                            <label>Nombre de empresa :  <text>@Html.DisplayFor(z => Item.datos_laborales.Nombrempresa)</text></label>
                         </div>
+                        <br />                         
                         <br />
                         <div>
-                            <text>@Html.DisplayFor(z => Item.datos_laborales.Nombrempresa)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Lugar de trabajo</label>
+                            <label>Lugar de trabajo : <text>@Html.DisplayFor(z => Item.datos_laborales.lugartrabajo)</text></label>
                         </div>
+                        <br />                      
                         <br />
                         <div>
-                            <text>@Html.DisplayFor(z => Item.datos_laborales.lugartrabajo)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Puesto desempeñado</label>
+                            <label>Puesto desempeñado : <text>@Html.DisplayFor(z => Item.datos_laborales.puestoempeñado)</text></label>
                         </div>
+                        <br />                         
                         <br />
                         <div>
-                            <text>@Html.DisplayFor(z => Item.datos_laborales.puestoempeñado)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Tiempo prestado</label>
+                            <label>Tiempo prestado : <text>@Html.DisplayFor(z => Item.datos_laborales.tiempoprestado)</text></label>
                         </div>
+                        <br />                       
                         <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_laborales.tiempoprestado)</text>
-                        </div>
-                        <br />
-                        <a asp-controller="PerfilUsuario" asp-action="EditarDatosLaborales" asp-route-id="@Item.datos_laborales.Pkdatoslaborales" class="btn btn-info">Editar</a>
+                        <a asp-controller="PerfilUsuario" asp-action="EditarDatosLaborales" asp-route-id="@Item.datos_laborales.Pkdatoslaborales" class="btn">Editar</a>
                     }
+
+                }
                 }
             </div>
     </div>
@@ -60,31 +54,25 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        <div>
-                            <label>Nombre escuela</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_academicos.nombrescuela)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Grado egresado</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_academicos.gradoegresado)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Especialidad</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_academicos.especialidad)</text>
-                        </div>  
-                        <br />
-                        <a asp-controller="PerfilUsuario" asp-action="EditarDatosAcademicos" asp-route-id="@Item.datos_academicos.PkDatosacademicos" class="btn btn-info">Editar</a>
+                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        {
+                            <div>
+                                <label>Nombre escuela : <text>@Html.DisplayFor(z => Item.datos_academicos.nombrescuela)</text></label>
+                            </div>
+                            <br />                          
+                            <br />
+                            <div>
+                                <label>Grado egresado :  <text>@Html.DisplayFor(z => Item.datos_academicos.gradoegresado)</text></label>
+                            </div>
+                            <br />                      
+                            <br />
+                            <div>
+                                <label>Especialidad : <text>@Html.DisplayFor(z => Item.datos_academicos.especialidad)</text></label>
+                            </div>
+                            <br /> 
+                            <br />
+                            <a asp-controller="PerfilUsuario" asp-action="EditarDatosAcademicos" asp-route-id="@Item.datos_academicos.PkDatosacademicos" class="btn btn-info">Editar</a>
+                        }
                     }
                 }
       </div>
@@ -96,31 +84,25 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        <div>
-                            <label>Direccion</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_domicilio.direccion)</text>
-                        </div>
-                        <br />
-                        <div>
-                            <label>CP</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_domicilio.cp)</text>
-                        </div>  
-                        <br />
-                        <div>
-                            <label>Referencia</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_domicilio.referencia)</text>
-                        </div>
-                        <br />
-                         <a asp-controller="PerfilUsuario" asp-action="EditarDatosDomicilio" asp-route-id="@Item.datos_domicilio.Pkdatosdomicilio" class="btn btn-info">Editar</a>
+                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        {
+                            <div>
+                                <label>Direccion :  <text>@Html.DisplayFor(z => Item.datos_domicilio.direccion)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Codigo postal :  <text>@Html.DisplayFor(z => Item.datos_domicilio.cp)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Referencia : <text>@Html.DisplayFor(z => Item.datos_domicilio.referencia)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <a asp-controller="PerfilUsuario" asp-action="EditarDatosDomicilio" asp-route-id="@Item.datos_domicilio.Pkdatosdomicilio" class="btn btn-info">Editar</a>
+                        }
                     }
                 }
 
@@ -133,48 +115,36 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        <div>
-                            <label >Nombres</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_personales.nombres)</text>
-                        </div> 
-                        <br />
-                        <div>
-                            <label>Apellidos</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_personales.apellidos)</text>
-                        </div>
-                        <br />
-                        <div>
-                            <label>Nacionalidad</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_personales.nacionalidad)</text>
-                        </div>
-                        <br />
-                        <div>
-                            <label>Fecha de nacimiento</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_personales.fechadenacimiento)</text>
-                        </div>
-                        <br />
-                        <div>
-                            <label>Telefono</label>
-                        </div>
-                        <br />
-                        <div>
-                            <text>@Html.DisplayFor(z => Item.datos_personales.telefono)</text>
-                        </div> 
-                        <br />
+                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        {
+                            <div>
+                                <label>Nombres : <text>@Html.DisplayFor(z => Item.datos_personales.nombres)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Apellidos : <text>@Html.DisplayFor(z => Item.datos_personales.apellidos)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Nacionalidad : <text>@Html.DisplayFor(z => Item.datos_personales.nacionalidad)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Fecha de nacimiento :  <text>@Html.DisplayFor(z => Item.datos_personales.fechadenacimiento)</text></label>
+                            </div>
+                            <br />
+                            <br />
+                            <div>
+                                <label>Telefono :  <text>@Html.DisplayFor(z => Item.datos_personales.telefono)</text></label>
+                            </div>
+                            <br /> 
+                            <br />
 
-                        <a asp-controller="PerfilUsuario" asp-action="EditarDatosPersonales" asp-route-id="@Item.datos_personales.Pkdatospersonales" class="btn btn-info">Editar</a>
+                            <a asp-controller="PerfilUsuario" asp-action="EditarDatosPersonales" asp-route-id="@Item.datos_personales.Pkdatospersonales" class="btn btn-info">Editar</a>
+                        }
                     }
                 }
             </div> 
