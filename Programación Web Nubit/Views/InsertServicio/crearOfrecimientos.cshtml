@@ -1,6 +1,6 @@
 ﻿@model Programación_Web_Nubit.Models.Serviciosofrecidos
 @{
-    ViewData["Title"] = "Crear Servicio";
+    ViewData["Title"] = "Detalles del Servicio";
      Layout = "_Layout_Dashboard";
 }
 
@@ -48,7 +48,7 @@
     <div class="offset-12">
         <div class="card border">
                 <div class="card-header bg-dark" style="text-align:center">
-                <h1 class="text-white"> <strong>Nuevo Servicio</strong></h1>
+                <h1 class="text-white"> <strong>Detalles del servicio</strong></h1>
 
             </div>
 
@@ -64,18 +64,18 @@
                     <br />
 
                     <div class="container-fluid">
-                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear Articulo</button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Agregar al servicio</button>
                     </div>
 
                     <br />
 
-                    <button class="formulario__btn" asp-controller="Home" asp-action="dashboard_serv">Finalizar</button>
+                    <button class="container-fluid" asp-controller="Home" asp-action="dashboard_serv">Finalizar</button>
                 </form>
 
                 <br />
                 <br />
 
-                <a class="btn-outline-dark" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-arrow-left"></i></a>
+@*                <a class="btn-outline-dark" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-arrow-left"></i></a>*@
 
             </div>
 
