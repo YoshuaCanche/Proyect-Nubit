@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Programación_Web_Nubit.Context;
+using Programación_Web_Nubit.Models;
 using System;
 using System.Linq;
 
@@ -24,7 +25,10 @@ namespace Programación_Web_Nubit.Controllers
         {
             try
             {
-                var response = _context.Perfil_De_Trabajos.Include(z => z.roles).FirstOrDefault(x => x.Usuario == user && x.Contraseña == password);
+                Incriptacion code = new Incriptacion();
+                string cachar = code.encriptar(password);
+                
+                var response = _context.Perfil_De_Trabajos.Include(z => z.roles).FirstOrDefault(x => x.Usuario == user && x.Contraseña == cachar);
                 //var userrol = _context.roles.FirstOrDefault( => x.PkRol == response.FkRol);
                 if (response != null)
                 {
