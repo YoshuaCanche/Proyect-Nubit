@@ -25,10 +25,9 @@ namespace Programación_Web_Nubit.Controllers
         {
             try
             {
-                Incriptacion code = new Incriptacion();
-                string cachar = code.encriptar(password);
                 
-                var response = _context.Perfil_De_Trabajos.Include(z => z.roles).FirstOrDefault(x => x.Usuario == user && x.Contraseña == cachar);
+                
+                var response = _context.Perfil_De_Trabajos.Include(z => z.roles).FirstOrDefault(x => x.Usuario == user && x.Contraseña == password);
                 //var userrol = _context.roles.FirstOrDefault( => x.PkRol == response.FkRol);
                 if (response != null)
                 {

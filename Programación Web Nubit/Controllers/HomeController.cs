@@ -219,11 +219,11 @@ namespace Programación_Web_Nubit.Controllers
         {
             if (pt != null)
             {
-                Incriptacion code = new Incriptacion();
+                
               
                 Perfil_de_trabajo perfil = new Perfil_de_trabajo();
                 perfil.Usuario = pt.Usuario;
-                perfil.Contraseña = code.encriptar(pt.Contraseña);
+                perfil.Contraseña = pt.Contraseña;
                 perfil.Fk_rol = 1;
 
                 _context.Perfil_De_Trabajos.Add(perfil);
