@@ -124,7 +124,7 @@ namespace Programación_Web_Nubit.Controllers
         {
             try
             {
-                await conn.QueryAsync<Empleo>("so_update_empleo", new
+                await conn.QueryAsync<Empleo>("sp_update_empleo", new
                 {
                     emp.categorias,
                     emp.Descripcion,

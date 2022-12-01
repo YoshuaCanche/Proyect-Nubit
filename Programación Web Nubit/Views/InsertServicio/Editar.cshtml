@@ -1,40 +1,80 @@
-﻿@model Programación_Web_Nubit.Models.Empleo
+﻿
+@model Programación_Web_Nubit.Models.Empleo
+@{
+    ViewData["Title"] = "Editar Servicio";
+     Layout = "_Layout_Dashboard";
+}
 
-<h1>
-    @ViewData["Title"]="Editar cliente";
-</h1>
 
-<div class="container-fluid">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f7d8e2933c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
-            <div class="card-header bg-dark">
+            <div class="card-header bg-dark" style="text-align:center">
                 <h1 class="text-white"> <strong>Editar Servicio</strong></h1>
 
             </div>
 
             <div class="card-body">
 
-                <form asp-action="EditarServicio" method="post">
-                   
-                    <input type="hidden" asp-for="Pk_empleo" />
+                    <form asp-action="EditarServicio" method="post">
 
+                        <input type="hidden" asp-for="Pk_empleo" />
                     <div class="form-group">
                         <label asp-for="categorias">Nombre</label>
-                        <input asp-for="categorias" class="form-control" placeholder="ingresar nombre articulo" required />
+                        <input asp-for="categorias" class="form-control" placeholder="Ingresar nombre de la categoria" required />
                     </div>
 
                     <div class="form-group">
                         <label asp-for="Descripcion">Descripcion</label>
-                        <input asp-for="Descripcion" class="form-control" placeholder="Descripcion" required />
+                        <input asp-for="Descripcion" class="form-control" placeholder="Ingresar la descripcion" required />
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Foto_servicio">IMG</label>
-                        <input asp-for="Foto_servicio" class="form-control" placeholder="URL img" required />
+                        <label asp-for="Foto_servicio">Imagen</label>
+                        <input asp-for="Foto_servicio" class="form-control" placeholder="Url de la imagen" required />
                     </div>
 
-                    <div class="container-fluid">
-                        <button type="submit"  class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Editar</button>
+                    <br />
+
+                   <div class="container-fluid" style="text-align:center;">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Editar</button>
                     </div>
 
                 </form>
@@ -42,7 +82,7 @@
                 <br />
                 <br />
 
-                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a class="text-danger fs-4" class="fs-4" class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><i class="fa-solid fa-door-open"></i>  Salir</a>
 
             </div>
 
@@ -53,6 +93,12 @@
 </div>
 
 </div>
+
+
+</body>
+
+</html>
+
 
 
 

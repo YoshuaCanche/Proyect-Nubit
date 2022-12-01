@@ -1,34 +1,75 @@
-﻿@model Programación_Web_Nubit.Models.Perfil_de_trabajo
+﻿
 
-<h1>
-    @ViewData["Title"]="Agrgar cliente";
-</h1>
+@model Programación_Web_Nubit.Models.Perfil_de_trabajo
+@{
+    ViewData["Title"] = "Crear Servicio";
+     Layout = "_Layout_Dashboard";
+}
 
-<div class="container-fluid">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f7d8e2933c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
-            <div class="card-header bg-dark">
-                <h1 class="text-white"> <strong>Agregar Servicio</strong></h1>
+                <div class="card-header bg-dark" style="text-align:center">
+                <h1 class="text-white"> <strong>Nuevo Usuario</strong></h1>
 
             </div>
 
             <div class="card-body">
 
-                <form asp-action="AddUser" method="post">
+                    <form asp-action="AddUser" method="post">
 
                     <div class="form-group">
-                        <label asp-for="Usuario">Usuario</label>
-                        <input asp-for="Usuario" class="form-control" placeholder="ingresar nombre de usuario" required />
+                        <label asp-for="Usuario">USUARIO</label>
+                        <input asp-for="Usuario" class="form-control" placeholder="Ingresar el nombre del usuario" required />
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Contraseña">Contraseña</label>
-                        <input asp-for="Contraseña" class="form-control" placeholder="Contraseña" required />
+                        <label asp-for="Contraseña">CONTRASEÑA</label>
+                        <input asp-for="Contraseña" class="form-control" placeholder="Ingresar la contraseña" required />
                     </div>
 
-                   
-                    <div class="container-fluid">
-                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>ADD</button>
+                   <br />
+                   <br /><br /><br />
+
+                   <div class="container-fluid" style="text-align:center">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear Usuario</button>
                     </div>
 
                 </form>
@@ -36,7 +77,7 @@
                 <br />
                 <br />
 
-                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a class="text-danger fs-4" class="fs-4" class="btn-outline-dark" asp-controller="Home" asp-action="dashboard"><i class="fa-solid fa-door-open"></i>  Salir</a>
 
             </div>
 
@@ -47,3 +88,9 @@
 </div>
 
 </div>
+
+
+</body>
+
+</html>
+

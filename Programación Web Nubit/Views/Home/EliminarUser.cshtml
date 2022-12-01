@@ -1,39 +1,45 @@
-﻿@model Programación_Web_Nubit.Models.Perfil_de_trabajo
-
+﻿
+@model Programación_Web_Nubit.Models.Perfil_de_trabajo
+@{
+    ViewData["Title"] = "Editar Usuario";
+    Layout = "_Layout_Dashboard";
+}
+<link rel="stylesheet" href="~/css/PerfilUsuario.css" />
 <div class="container-fluid">
     <div class="offset-12">
-        <div class="card border">
+        <div class="card border" style="text-align:center">
             <div class="card-header bg-dark">
-                <h1 class="text-white"> <strong>Proceso Eliminacion</strong></h1>
-
+                <h1 class="text-white">
+                    <strong>Editar  usuario</strong>
+                </h1>
             </div>
-
             <div class="card-body">
-
                 <form asp-action="DeleteUser" method="post">
-                    @*id del articulo oculto*@
+                    @*OBTENEMOS EL ID DEL USUARIO PERO SE LO OCULTAMOS AL USUARIO*@
                     <input type="hidden" asp-for="PkPt" />
 
+                    <div class="form-group">
+                        <label class="formulario__label">
+                            Al pulsar eliminar se borrara el registro permanentemente
 
-
-                    <p>Al pulsar eliminar se borrara el registro permanentemente</p>
-                    <div class="container-fluid">
-                        <button type="submit" class="btn btn-outline-success">Eliminar</button>
+                        </label>
+                        
                     </div>
-
-
-
+                    <
+                    <div class="container-fluid">
+                        <br />
+                        <br />
+                        <button type="submit" class="btn btn-outline-success">
+                             Eliminar
+                        </button>
+                    </div>
                 </form>
-
                 <br />
-                <a class="btn-outline-dark" asp-action="dashboard">Cancelar</a>
-
+                <br />
+                <a class="btn btn-outline-dark" asp-controller="Home" asp-action="dashboard">
+                    <i class="fa-solid fa-arrow-rotate-left"></i> Volver
+                </a>
             </div>
-
         </div>
-
     </div>
-
-</div>
-
 </div>

@@ -1,11 +1,9 @@
 ﻿@model Programación_Web_Nubit.Models.Empleo
 @{
     ViewData["Title"] = "Crear Servicio";
+     Layout = "_Layout_Dashboard";
 }
 
-@{
-    Layout = "_Layout_Dashboard";
-}
 
 
 
@@ -49,7 +47,7 @@
     <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
-            <div class="card-header bg-dark">
+                <div class="card-header bg-dark" style="text-align:center">
                 <h1 class="text-white"> <strong>Nuevo Servicio</strong></h1>
 
             </div>
@@ -69,14 +67,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Foto_servicio">Imagen</label>
+                        <label asp-for="Foto_servicio">URL imagen</label>
                         <input asp-for="Foto_servicio" class="form-control" placeholder="Url de la imagen" required />
                     </div>
 
                     <br />
+                        <br />
+                     <br />
 
-                   <div class="container-fluid">
-                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear Articulo</button>
+                   <div class="container-fluid" style="text-align:center">
+                        <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i>Crear</button>
                     </div>
 
                 </form>
