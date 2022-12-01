@@ -18,7 +18,7 @@
 
                     @foreach (var Item in Model)
                     { 
-                    if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt") ) {
+                    if (Item.FkPt.ToString() == Context.Session.GetString("PerfilPkPt") ) {
 
                         <div>
                             <label>Nombre de empresa :  <text>@Html.DisplayFor(z => Item.datos_laborales.Nombrempresa)</text></label>
@@ -54,7 +54,7 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        if (Item.FkPt.ToString() == Context.Session.GetString("PerfilPkPt"))
                         {
                             <div>
                                 <label>Nombre escuela : <text>@Html.DisplayFor(z => Item.datos_academicos.nombrescuela)</text></label>
@@ -84,7 +84,7 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        if (Item.FkPt.ToString() == Context.Session.GetString("PerfilPkPt"))
                         {
                             <div>
                                 <label>Direccion :  <text>@Html.DisplayFor(z => Item.datos_domicilio.direccion)</text></label>
@@ -115,7 +115,7 @@
                 {
                     @foreach (var Item in Model)
                     {
-                        if (Item.PkTrabajador.ToString() == Context.Session.GetString("PerfilPkPt"))
+                        if (Item.FkPt.ToString() == Context.Session.GetString("PerfilPkPt"))
                         {
                             <div>
                                 <label>Nombres : <text>@Html.DisplayFor(z => Item.datos_personales.nombres)</text></label>
