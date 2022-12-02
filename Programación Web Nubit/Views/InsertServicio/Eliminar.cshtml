@@ -1,38 +1,42 @@
 ﻿@model Programación_Web_Nubit.Models.Empleo
 @{
-    Layout = "_Layout_Dashboard_procesos";
+   Layout = "_Layout_Dashboard_procesos";
 }
-<div class="container-fluid">
-    <div class="offset-12">
-        <div class="card border">
-            <div class="card-header bg-dark">
-                <h1 class="text-white"> <strong>Proceso Eliminacion</strong></h1>
 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<body>
+	<main>
+        <div style="margin:20px;font-family:Arial;">
+
+            <div style="text-align:center;">
+                <div class="card-header bg-dark">
+                    <h1 class="text-white"> <strong>Proceso Eliminacion</strong></h1>
+                </div>
             </div>
 
             <div class="card-body">
 
-                <form asp-action="EliminarServicio" method="post">
-                  
-                    <input type="hidden" asp-for="Pk_empleo" />
+                <div>
+                    <form asp-action="EliminarServicio" method="post">
+
+                        <input type="hidden" asp-for="Pk_empleo" />
 
 
-                    <p>Al pulsar eliminar se borrara el registro permanentemente</p>
-                    <div class="container-fluid">
-                        <button type="submit" class="btn btn-outline-success">Eliminar</button>
-                    </div>
+                        <div style="text-align:center;">
+                            <p>Al pulsar eliminar se borrara el registro permanentemente</p>
+                        </div>
+                        <div style="display:flex;justify-content:space-around;">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv"><button type="button" class="btn btn-primary">Cancelar</button></a>
+                        </div>
 
-                </form>
-
-                <br />
-                <a class="btn-outline-dark" asp-controller="Home" asp-action="dashboard_serv">Cancelar</a>
-
+                    </form>
+                </div>
             </div>
 
         </div>
-
-    </div>
-
-</div>
-
-</div>
+    </main>
+</body>
