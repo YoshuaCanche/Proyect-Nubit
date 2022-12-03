@@ -1,0 +1,109 @@
+﻿@model Programación_Web_Nubit.Models.Datos_personales
+
+@{
+	ViewData["Title"] = "Datos Personales";
+}
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="~/css/D_personales.css"/>
+	<title>Nubit</title>
+</head>
+
+<body>
+	<h4 class="form-label__titulos"><span> Datos Personales</span></h4>
+	<main>
+		<form asp-action="CrearDatos_Personales"  method="post">
+		
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label asp-for="nombres" class="formulario__label">Nombre(s)</label>
+				<div class="formulario__grupo-input">
+					<input asp-for="nombres" class="formulario__input" id="nombre" placeholder="John Doe" type="text" pattern="[a-z A-Z]+" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
+			</div>
+
+
+			<div class="formulario__grupo" id="grupo__apelloidop">
+				<label asp-for="apellidos" class="formulario__label">Apellido(s)</label>
+				<div class="formulario__grupo-input">
+					<input asp-for="apellidos" class="formulario__input" id="apellidop" placeholder="John Doe" type="text" pattern="[a-z A-Z]+" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
+
+
+			</div>
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label asp-for="nacionalidad" class="formulario__label">Nacionalidad</label>
+				<div class="formulario__grupo-input">
+					<input asp-for="nacionalidad" class="formulario__input" id="nombre" placeholder="Mexicana" type="text" pattern="[a-z A-Z]+" required="" >
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
+			</div>
+
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label asp-for="fechadenacimiento" class="formulario__label">Fecha Nacimiento </label>
+				<div class="formulario__grupo-input">
+					<input asp-for="fechadenacimiento" class="formulario__input" id="nombre" placeholder="17/11/2022" type="date" value="2022-12-03" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+					numeros, letras y guion bajo.</p>
+			</div>
+
+			<!--   -->
+
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label asp-for="telefono" class="formulario__label">Teléfono</label>
+				<div class="formulario__grupo-input">
+					<input asp-for="telefono" class="formulario__input"  id="telefono" placeholder="4491234567" minlength="10" maxlength="13" type="text" required="">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.
+				</p>
+			</div>
+
+
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+					correctamente. </p>
+			</div>
+
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <br />
+                <button button href="/Solicitud/CrearDomicilio" class="formulario__btn">Siguiente</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                @*<button class="formulario__btn" asp-controller="DatosEscolares" asp-action="Crear">Siguente</button>*@
+            </div>
+
+		</form>
+	</main>
+</body>
+
