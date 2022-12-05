@@ -80,10 +80,11 @@ header {
     padding: 3px;
 }
 
-h1 {
+.title {
     text-align: center;
-    color: #1a2537;
-    font-size: 40px;
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    color: #2E4053;
 }
 
 input[type="text"],
