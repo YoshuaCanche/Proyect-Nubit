@@ -21,7 +21,7 @@ namespace Programación_Web_Nubit.Controllers
             _logger = logger;
             _context = context;
         }
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-K8DLS1G; Initial Catalog=Bd_nubit_web; Integrated Security=True;");
+        SqlConnection connection = new SqlConnection("Data Source=LAPTOP-OH2KCBPB; Initial Catalog=Bd_nubit_web; Integrated Security=True;");
         [HttpGet]
         public async Task<IActionResult> Index()
         {

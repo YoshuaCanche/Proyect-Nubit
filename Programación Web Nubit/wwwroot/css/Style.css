@@ -203,7 +203,7 @@ a {
 .contenedor {
     display: flex;
     padding: 25px;
-    margin-top: 40px
+    margin-top: 40px;
 }
 
 .img_empleado {
