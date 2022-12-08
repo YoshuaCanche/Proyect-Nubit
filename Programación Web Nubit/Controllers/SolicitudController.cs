@@ -23,7 +23,7 @@ namespace Programación_Web_Nubit.Controllers
             _context = context;
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOP-OH2KCBPB;initial catalog=Bd_nubit_web;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-LODQ1E6\\SQLEXPRESS;initial catalog=Bd_nubit_web;Integrated Security=True");
 
         public IActionResult CrearPersonales()
         {
